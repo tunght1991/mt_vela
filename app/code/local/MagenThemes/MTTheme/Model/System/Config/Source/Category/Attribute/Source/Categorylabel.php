@@ -25,7 +25,7 @@ class MagenThemes_MTTheme_Model_System_Config_Source_Category_Attribute_Source_C
      */
 	public function getAllOptions()
 	{
-		$cfg = Mage::helper('mtbejewelry');
+		$cfg = Mage::helper('mtvela');
 		
 		if (!$this->_options)
 		{	

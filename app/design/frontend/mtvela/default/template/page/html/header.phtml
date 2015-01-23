@@ -1,0 +1,134 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category    design
+ * @package     base_default
+ * @copyright   Copyright (c) 2012 Magento Inc. (http://www.magentocommerce.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+/**
+ * @var Mage_Page_Block_Html_Header $this
+ */
+?>
+<?php
+$theme = $this->helper('mtvela');
+$compareHeader = $theme->getCfg('header/compare');
+$mobileCart = $theme->getCfg('header/hide_on_mobile');
+$toplink = $theme->getCfg('magento_blocks/top_links');
+$class = $mobileCart ? 'hidden-xs' : '';
+$logo = Mage::getStoreConfig('mtvela_design/header/logo_upload');
+$logo_retina = Mage::getStoreConfig('mtvela_design/header/logo_retina_upload');
+$mediaUrl = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA);
+?>
+<header class="header-container">
+
+    <div class="header">
+        <div id="mt-sticky-header">
+            <div class="top-header">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-5  col-md-5 col-sm-5  col-xs-12">
+                            <div class="header-top-left">
+                                <div class="top-link">
+                                    <?php if ($toplink): ?>
+                                        <?php echo $this->getChildHtml('topLinks') ?>
+                                    <?php endif; ?>
+                                </div>
+                            </div>
+                            <?php if ($compareHeader): ?>
+                                <div class="top-compare">
+                                    <div class="mt-maincompare">
+                                        <?php $_helper = $this->helper('catalog/product_compare'); ?>
+                                        <span
+                                            class="mt-icon-compareajax visible-md visible-lg"><?php echo $this->__('Compare') ?></span>
+                                        <a href="<?php echo $_helper->getListUrl() ?>" target="_blank"
+                                           class="visible-xs visible-sm clearfix">
+                                            <span class="mt-icon-compareajax"></span>
+                                            <span class="mt-compare-label"><?php echo $this->__('Compare') ?></span>
+                                        </a>
+
+                                        <div class="block-top-compare">
+                                            <?php echo $this->getChildHtml('compareajax') ?>
+                                        </div>
+                                    </div>
+                                </div>
+                            <?php endif; ?>
+                            <?php //echo $this->getChildHtml('store_language') ?>
+                            <?php //echo $this->getChildHtml('custom_currency_selector') ?>
+                        </div>
+                        <div class="col-lg-4  col-md-4 col-sm-4 col-xs-12">
+                            <div class="mt-top-contact">
+                                <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('top-contact')->toHtml(); ?>
+                            </div>
+                        </div>
+                        <div class="col-lg-3  col-md-3 col-sm-3 col-xs-12">
+                            <div class="mt-top-social">
+                                <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('social')->toHtml(); ?>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="bottom-header">
+            <div class="container">
+                <div class="header-act row">
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                        <div class="home-logo">
+                            <?php if ($this->getIsHomePage()):?>
+                                <h1 class="logo"><strong><?php echo $this->getLogoAlt() ?></strong><a href="<?php echo $this->getUrl('') ?>" title="<?php echo $this->getLogoAlt() ?>">
+                                        <img class="img-responsive" src="<?php echo $mediaUrl.'wysiwyg/magenthemes/mtvela/logo/'.$logo; ?>" alt="<?php echo $this->getLogoAlt() ?>" /></a>
+                                </h1>
+                            <?php else:?>
+                                <a href="<?php echo $this->getUrl('') ?>" title="<?php echo $this->getLogoAlt() ?>" class="logo"><strong><?php echo $this->getLogoAlt() ?></strong>
+                                    <img class="img-responsive" src="<?php echo $mediaUrl.'wysiwyg/magenthemes/mtvela/logo/'.$logo; ?>" alt="<?php echo $this->getLogoAlt() ?>" />
+                                </a>
+                            <?php endif?>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12"><?php echo $this->getChildHtml('topSearch') ?></div>
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                        <div class="mt-top-cart <?php echo $class;?>">
+                            <div class="mt-maincart">
+                                <?php echo $this->getChildHtml('ajaxcart'); ?>
+
+                            </div>
+                            <div id="notification"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script type="text/javascript">
+
+        $mt(window).load(function () {
+            $mt("#mt-sticky-header").sticky({topSpacing: 0});
+            var $logoImg = $mt('.mt-wrapper .header .logo img');
+            if ($logoImg.css('min-height') == '1px') {
+                $logoImg.attr('src', $logoImg.attr('src').replace('<?php echo $logo;?>', '<?php echo $logo_retina;?>'));
+            }
+        });
+
+    </script>
+</header>

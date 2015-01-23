@@ -13,9 +13,9 @@
  */
 -->
 <layout>
-    <mtbejewelry_adminhtml_support_index>
+    <mtvela_adminhtml_support_index>
         <reference name="content">
-            <block type="mtbejewelry/adminhtml_support" name="adminhtml_support"/>
+            <block type="mtvela/adminhtml_support" name="adminhtml_support"/>
         </reference>
-    </mtbejewelry_adminhtml_support_index>
+    </mtvela_adminhtml_support_index>
 </layout>
