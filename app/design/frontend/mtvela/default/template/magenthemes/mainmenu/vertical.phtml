@@ -23,6 +23,12 @@ $identifier = Mage::getSingleton('cms/page')->getIdentifier();
 ?>
 <?php if($_menu): ?>
 <div class="mt-navigation-vertical hidden-xs">
+	<div class="block-title">
+		<strong>
+			<span class="fa fa-bars"></span>
+			<span>Categories</span>
+		</strong>
+	</div>
 	<div class="mt-main-menu-vertical">
 		<ul class="megamenu-vertical">
 			<?php if(Mage::getStoreConfig('mtvela/menu/home')){?>

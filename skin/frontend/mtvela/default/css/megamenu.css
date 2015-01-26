@@ -438,8 +438,10 @@ li.level0 > a > span > .pin-bottom:before {
     z-index: 9;
     background: #dedee4;
     top: 0;
-    padding: 0; 
+    padding: 0;
+
 }
+.mt-main-menu-vertical{background-color: #FFFFFF;border-left: 1px solid #d9d9d9;border-right: 1px solid #d9d9d9;border-bottom: 1px solid #d9d9d9;}
 .mt-main-menu-vertical .dropdown ul.level0  li{ width: 100%; padding: 0 13px;}
 .mt-main-menu-vertical li.m-dropdown .dropdown.sub-wrapper { width: 260px; max-width:290px }
 #mtnav .m-dropdown  .mtmenu-block.mtmenu-block-center .level0{margin-left: 0;}
@@ -463,3 +465,7 @@ li.level0 > a > span > .pin-bottom:before {
     width: 100%;
     padding: 0 0 0 10px;
 }
+/*custom megamenu*/
+.mt-navigation-vertical .block-title{color: #FFFFFF;background-color: #333333;border-top: 1px solid #FFFFFF;}
+.mt-navigation-vertical .block-title span{font-size: 17px;letter-spacing: 0.025em;line-height: 35px;padding: 10px 20px ;text-transform: uppercase;}
+.mt-navigation-vertical .block-title span.fa-bars{padding-right: 2px;padding-left: 22px;}

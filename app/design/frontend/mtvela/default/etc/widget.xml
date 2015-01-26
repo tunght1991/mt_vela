@@ -32,7 +32,15 @@
                 <label>Template</label>
                 <visible>1</visible>
                 <type>select</type>
-                <values> 
+                <values>
+                    <product-new translate="label">
+                        <value>mt/widget/product-new.phtml</value>
+                        <label>Product news</label>
+                    </product-new>
+                    <product-featured translate="label">
+                        <value>mt/widget/product-featured.phtml</value>
+                        <label>Product featureds</label>
+                    </product-featured>
                     <productslist translate="label">
                         <value>mt/widget/products.phtml</value>
                         <label>Products</label>

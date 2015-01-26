@@ -30,7 +30,6 @@ $helper = Mage::helper('catalog/image');
             <div class="owl-carousel">
         <?php endif ?>
         <?php if ($i % $column == 0 || ($row > 1 && $i % $row == 0)): ?>
-        <div class="row">
         <ul class="products-grid <?php echo $carousel && $row == 1 ? ' owl-carousel' : '' ?>">
     <?php endif ?>
         <?php $i++ ?>
@@ -120,7 +119,6 @@ $helper = Mage::helper('catalog/image');
         </div>
     <?php endif ?>
         <?php if ($carousel == 1 && $row > 1 && $i == $count): ?>
-            </div>
         <?php endif ?>
     <?php endforeach ?>
 <?php endif ?>

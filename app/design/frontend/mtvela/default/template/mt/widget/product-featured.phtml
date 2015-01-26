@@ -18,7 +18,7 @@ $t                  = microtime();
     <?php if ($_title): ?>
         <h2><?php echo $_title ?></h2>
     <?php endif ?>
-    <?php echo $this->renderCollection('collection', $this->getData('mode'), 'mt/widget/collection-product-new.phtml') ?>
+    <?php echo $this->renderCollection('collection', $this->getData('mode'), 'mt/widget/collection-featured.phtml') ?>
 </div>
 <script type="text/javascript" src="<?php echo Mage::getBaseUrl('js') ?>mt/widget/frontend.js"></script>
 <script type="text/javascript">

@@ -147,14 +147,8 @@
             <block type="reports/product_compared" name="right.reports.product.compared" template="reports/product_compared.phtml" />
             <block type="reports/product_viewed" name="left.reports.product.viewed" template="reports/product_viewed.phtml" />
             <block type="wishlist/customer_sidebar" name="wishlist_sidebar" as="wishlist" template="wishlist/sidebar.phtml"/>
-            <block type="poll/activePoll" name="right.poll">
-                <action method="setPollTemplate"><template>poll/active.phtml</template><type>poll</type></action>
-                <action method="setPollTemplate"><template>poll/result.phtml</template><type>results</type></action>
-            </block>
-            <block type="tag/popular" name="tags_popular" template="tag/popular.phtml"/>
-            <block type="paypal/logo" name="paypal.partner.right.logo" template="paypal/partner/logo.phtml"/>
-            
-            <block type="mtvela/mainmenu_menu" name="magenthemes.mvertical" template="magenthemes/mainmenu/vertical.phtml" before="-" />
+
+
         </reference>
 
         <!-- Header ====================================================================== -->
@@ -275,7 +269,7 @@
     <catalog_category_default>
 
         <reference name="root">
-            <action method="setTemplate"><template>page/1column.phtml</template></action>
+            <action method="setTemplate"><template>page/2columns-left.phtml</template></action>
 
         </reference>
 
@@ -304,7 +298,7 @@
     <catalog_category_layered>
 
         <reference name="root">
-            <action method="setTemplate"><template>page/1column.phtml</template></action>
+            <action method="setTemplate"><template>page/2columns-left.phtml</template></action>
             <remove name="breadcrumbs"></remove>
         </reference>
 

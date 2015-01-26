@@ -178,6 +178,7 @@ body.rtl .owl-item{direction: ltr;}
 .rtl #mtnav ul li ul.level1 li,.rtl #mtnav ul li ul.level2 li{padding: 0 16px 0 0;}
 .rtl #mtnav ul li ul.level1 li:hover ,.rtl #mtnav .mtmenu-block li.level2:hover{padding: 0 31px 0 0;}
 /*================= IPHONE 4=============*/
+
 @media only screen and (min-width: 240px) and (max-width: 320px) {
     .rtl .mt-top-cart{clear: both}
     .rtl #search_mini_form{float: right}
