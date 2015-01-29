@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<!--
+/**
+* @category    MT
+* @package     MT_Search
+* @copyright   Copyright (C) 2008-2014 MagentoThemes.net. All Rights Reserved.
+* @license     GNU General Public License version 2 or later
+* @author      MagentoThemes.net
+* @email       support@magentothemes.net
+*/
+-->
+<config>
+    <modules>
+        <MT_Search>
+            <version>0.0.1</version>
+        </MT_Search>
+    </modules>
+
+    <global>
+        <blocks>
+            <mtsearch>
+                <class>MT_Search_Block</class>
+            </mtsearch>
+        </blocks>
+        <helpers>
+            <mtsearch>
+                <class>MT_Search_Helper</class>
+            </mtsearch>
+        </helpers>
+    </global>
+
+    <frontend>
+        <layout>
+            <updates>
+                <mtsearch>
+                    <file>mt_search.xml</file>
+                </mtsearch>
+            </updates>
+        </layout>
+    </frontend>
+</config>

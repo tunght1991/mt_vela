@@ -198,11 +198,11 @@ $compareHeader = $theme->getCfg('header/compare');
         $mt("#select-language option").each(function(i,e){
             var lang = $mt(e).html().toLowerCase();
         });
-        $mt('.sbHolder:eq(0)').addClass('lang');
+        $mt('.form-language .sbHolder:eq(0)').addClass('lang');
         $mt("#select-currency option").each(function(i,e){
             var lang = $mt(e).html().toLowerCase();
         });
-        $mt('.sbHolder:eq(1)').addClass('currency');
+        $mt('.block-currency .sbHolder:eq(0)').addClass('currency');
         $mt(".sbHolder.lang .sbToggle").empty().append(selectToggleRight);
         $mt(".sbHolder.currency .sbToggle").empty().append(selectToggleRight);
     });

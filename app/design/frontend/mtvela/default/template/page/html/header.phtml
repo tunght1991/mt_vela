@@ -44,7 +44,7 @@ $mediaUrl = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA);
             <div class="top-header">
                 <div class="container">
                     <div class="row">
-                        <div class="col-lg-5  col-md-5 col-sm-5  col-xs-12">
+                        <div class="col-lg-6  col-md-6 col-sm-6  col-xs-12">
                             <div class="header-top-left">
                                 <div class="top-link">
                                     <?php if ($toplink): ?>
@@ -73,7 +73,7 @@ $mediaUrl = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA);
                             <?php //echo $this->getChildHtml('store_language') ?>
                             <?php //echo $this->getChildHtml('custom_currency_selector') ?>
                         </div>
-                        <div class="col-lg-4  col-md-4 col-sm-4 col-xs-12">
+                        <div class="col-lg-3  col-md-3 col-sm-3 col-xs-12">
                             <div class="mt-top-contact">
                                 <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('top-contact')->toHtml(); ?>
                             </div>
@@ -90,28 +90,47 @@ $mediaUrl = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA);
         </div>
         <div class="bottom-header">
             <div class="container">
-                <div class="header-act row">
+                <div class="header-act">
                     <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                        <div class="home-logo">
-                            <?php if ($this->getIsHomePage()):?>
-                                <h1 class="logo"><strong><?php echo $this->getLogoAlt() ?></strong><a href="<?php echo $this->getUrl('') ?>" title="<?php echo $this->getLogoAlt() ?>">
-                                        <img class="img-responsive" src="<?php echo $mediaUrl.'wysiwyg/magenthemes/mtvela/logo/'.$logo; ?>" alt="<?php echo $this->getLogoAlt() ?>" /></a>
-                                </h1>
-                            <?php else:?>
-                                <a href="<?php echo $this->getUrl('') ?>" title="<?php echo $this->getLogoAlt() ?>" class="logo"><strong><?php echo $this->getLogoAlt() ?></strong>
-                                    <img class="img-responsive" src="<?php echo $mediaUrl.'wysiwyg/magenthemes/mtvela/logo/'.$logo; ?>" alt="<?php echo $this->getLogoAlt() ?>" />
-                                </a>
-                            <?php endif?>
+                        <div class="navbar col-lg-12 visible-xs">
+                            <div class="navbar navbar-inverse">
+                                <div class="container-ner">
+                                    <div class="navbar-header">
+                                        <div class="navbar-toggle" type="button" data-toggle="collapse">
+                                            <div class="collapsed-icon">
+                                                <!--<span class="sr-only"><?php //echo $this->__('Navigation');?></span>-->
+                                                <span class="icon-bar"></span>
+                                                <span class="icon-bar"></span>
+                                                <span class="icon-bar"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="logo">
+                                <?php if ($this->getIsHomePage()):?>
+                                    <h1 class="logo"><strong><?php echo $this->getLogoAlt() ?></strong><a href="<?php echo $this->getUrl('') ?>" title="<?php echo $this->getLogoAlt() ?>">
+                                            <img class="img-responsive" src="<?php echo $mediaUrl.'wysiwyg/magenthemes/mtvela/logo/'.$logo; ?>" alt="<?php echo $this->getLogoAlt() ?>" /></a>
+                                    </h1>
+                                <?php else:?>
+                                    <a href="<?php echo $this->getUrl('') ?>" title="<?php echo $this->getLogoAlt() ?>" class="logo"><strong><?php echo $this->getLogoAlt() ?></strong>
+                                        <img class="img-responsive" src="<?php echo $mediaUrl.'wysiwyg/magenthemes/mtvela/logo/'.$logo; ?>" alt="<?php echo $this->getLogoAlt() ?>" />
+                                    </a>
+                                <?php endif?>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12"><?php echo $this->getChildHtml('topSearch') ?></div>
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12"><div class="row"><?php echo $this->getChildHtml('topSearch') ?></div></div>
                     <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                        <div class="mt-top-cart <?php echo $class;?>">
-                            <div class="mt-maincart">
-                                <?php echo $this->getChildHtml('ajaxcart'); ?>
-
+                        <div class="row">
+                            <div class="mt-top-cart <?php echo $class;?>">
+                                <div class="mt-maincart">
+                                    <?php echo $this->getChildHtml('ajaxcart'); ?>
+                                </div>
+                                <div id="notification"></div>
                             </div>
-                            <div id="notification"></div>
                         </div>
                     </div>
                 </div>

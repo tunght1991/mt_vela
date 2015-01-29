@@ -33,14 +33,14 @@
                 <visible>1</visible>
                 <type>select</type>
                 <values>
-                    <product-new translate="label">
-                        <value>mt/widget/product-new.phtml</value>
-                        <label>Product news</label>
-                    </product-new>
-                    <product-featured translate="label">
-                        <value>mt/widget/product-featured.phtml</value>
-                        <label>Product featureds</label>
-                    </product-featured>
+                    <position01 translate="label">
+                        <value>mt/widget/position01.phtml</value>
+                        <label>position01</label>
+                    </position01>
+                    <position02 translate="label">
+                        <value>mt/widget/position02.phtml</value>
+                        <label>position02</label>
+                    </position02>
                     <productslist translate="label">
                         <value>mt/widget/products.phtml</value>
                         <label>Products</label>

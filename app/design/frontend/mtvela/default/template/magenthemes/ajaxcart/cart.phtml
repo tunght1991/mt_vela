@@ -21,13 +21,13 @@ $enable = Mage::getStoreConfig('ajaxcart/ajaxcart_config/enable_ajaxcart');
 <div class="mt-cart">
 	<div class="mt-icon-ajaxcart">
         <a class="mt-cart-label" href="<?php echo $this->getUrl('checkout/cart') ?>">
+            <div class="mt-icon icon-cart ">
+                <span class="fa fa-shopping-cart ">&nbsp;</span>
+            </div>
             <span class="heading-cart">
-                    <span class="icon-cart">
-                        <span class="icon-ecommerce icon-ecommerce-bag"></span>
-                    </span>
                     <span class="mt-cart-title">My Bag</span>
                     <span class="print">
-                         <span>Cart (<?php print (!empty($_cartQty)) ? $_cartQty : '0' ;?>)</span>
+                         <span>Items (<?php print (!empty($_cartQty)) ? $_cartQty : '0' ;?>) - <?php echo Mage::helper('checkout')->formatPrice($this->getSubtotal()) ?></span>
                     </span>
             </span>
         </a>

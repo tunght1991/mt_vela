@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!--
+/**
+* @category    MT
+* @package     MT_Search
+* @copyright   Copyright (C) 2008-2014 MagentoThemes.net. All Rights Reserved.
+* @license     GNU General Public License version 2 or later
+* @author      MagentoThemes.net
+* @email       support@magentothemes.net
+*/
+-->
+<layout>
+    <default>
+        <reference name="header">
+            <action method="unsetChild"><block>topSearch</block></action>
+            <block type="mtsearch/widget" name="top.search" as="topSearch"/>
+        </reference>
+    </default>
+</layout>

@@ -122,6 +122,14 @@
                 <urlParams helper="core/url/getHomeUrl" />
                 <position>30</position>
             </action>
+            <action method="addLink" translate="label title">
+                <label>Support</label>
+                <url>#</url>
+                <title>Support</title>
+                <prepare/>
+                <urlParams helper="core/url/getHomeUrl" />
+                <position>40</position>
+            </action>
             <remove name="wishlist_link"/>
         </reference>
 

@@ -30,7 +30,9 @@ $helper = Mage::helper('catalog/image');
             <div class="owl-carousel">
         <?php endif ?>
         <?php if ($i % $column == 0 || ($row > 1 && $i % $row == 0)): ?>
-        <ul class="products-grid <?php echo $carousel && $row == 1 ? ' owl-carousel' : '' ?>">
+        <div class="row">
+        <div class="category-products collection-position02">
+        <ul class="products-grid  <?php echo $carousel && $row == 1 ? ' owl-carousel' : '' ?>">
     <?php endif ?>
         <?php $i++ ?>
         <li class="item">
@@ -45,13 +47,13 @@ $helper = Mage::helper('catalog/image');
                                 <span class="front margin-image">
                                     <?php if ($carousel == 1): ?>
                                         <img
-                                            data-src="<?php echo $helper->init($_product, 'small_image')->resize(370, 413); ?>"
+                                            data-src="<?php echo $helper->init($_product, 'small_image')->resize(270, 255); ?>"
                                             src="<?php echo $this->getSkinUrl('images/loader.gif') ?>"
                                             class="lazyOwl img-responsive lazy <?php echo $hoveraltClass; ?>"
                                             alt="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>"/>
                                     <?php else: ?>
                                         <img
-                                            src="<?php echo $helper->init($_product, 'small_image')->resize(370, 413); ?>"
+                                            src="<?php echo $helper->init($_product, 'small_image')->resize(270, 255); ?>"
                                             alt="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>"/>
                                     <?php endif ?>
                             </span>
@@ -107,6 +109,7 @@ $helper = Mage::helper('catalog/image');
                                         <p class="availability out-of-stock">
                                             <span><?php echo $this->__('Out of stock') ?></span></p>
                                     <?php endif; ?>
+                                    <div class="product-date" data-date="<?php echo Mage::helper('mtwidget')->getDate($_product) ?>"></div>
                                 </div>
                             </div>
                         </div>
@@ -117,8 +120,10 @@ $helper = Mage::helper('catalog/image');
         <?php if ($i == $count || $i % $column == 0 || ($row > 1 && $i % $row == 0)): ?>
         </ul>
         </div>
+        </div>
     <?php endif ?>
         <?php if ($carousel == 1 && $row > 1 && $i == $count): ?>
+            </div>
         <?php endif ?>
     <?php endforeach ?>
 <?php endif ?>

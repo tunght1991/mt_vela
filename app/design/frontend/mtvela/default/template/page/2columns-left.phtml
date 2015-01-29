@@ -73,8 +73,8 @@
                     </div>
                 </div>
                 <div class="container-main">
-                    <div class="main-content container">
-                        <div class="main">
+                    <div class="main-content">
+                        <div class="row show-grid">
                             <div class="col-lg-3 col-md-3 col-sm-3 col-pull-3">
                                 <div class="col-left sidebar">
                                     <?php echo $this->getChildHtml('left_top') ?>
@@ -83,11 +83,9 @@
                                 </div>
                             </div>
                             <div class="col-lg-9 col-md-9 col-sm-9 col-push-9 col-xs-12">
-                                <div class="row">
-                                    <div class="col-main">
-                                        <?php echo $this->getChildHtml('global_messages') ?>
-                                        <?php echo $this->getChildHtml('content') ?>
-                                    </div>
+                                <div class="col-main">
+                                    <?php echo $this->getChildHtml('global_messages') ?>
+                                    <?php echo $this->getChildHtml('content') ?>
                                 </div>
                             </div>
                         </div>
