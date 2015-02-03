@@ -47,13 +47,13 @@ $helper = Mage::helper('catalog/image');
                             <span class="front margin-image">
                                 <?php if ($carousel == 1): ?>
                                     <img
-                                        data-src="<?php echo $helper->init($_product, 'small_image')->resize(370, 413); ?>"
+                                        data-src="<?php echo $helper->init($_product, 'small_image')->resize(270, 255); ?>"
                                         src="<?php echo $this->getSkinUrl('images/loader.gif') ?>"
                                         class="lazyOwl img-responsive lazy <?php echo $hoveraltClass; ?>"
                                         alt="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>"/>
                                 <?php else: ?>
                                     <img
-                                        src="<?php echo $helper->init($_product, 'small_image')->resize(370, 413); ?>"
+                                        src="<?php echo $helper->init($_product, 'small_image')->resize(270, 255); ?>"
                                         alt="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>"/>
                                 <?php endif ?>
                         </span>
@@ -64,6 +64,15 @@ $helper = Mage::helper('catalog/image');
 
                     <div class="bottom-product">
                         <div class="bottom-product-content">
+                            <span class="category-name">
+                            <?php
+                                $cats = $_product->getCategoryIds();
+                                foreach ($cats as $category_id) {
+                                $_cat = Mage::getModel('catalog/category')->load($category_id) ;
+                                    echo $_cat->getName();
+                                }
+                            ?>
+                            </span>
                             <h3 class="product-name">
                                 <a href="<?php echo $_product->getProductUrl() ?>"
                                    title="<?php echo $this->stripTags($_product->getName(), null, true) ?>">
@@ -73,6 +82,9 @@ $helper = Mage::helper('catalog/image');
 
                             <div class="table"><?php echo $this->getPriceHtml($_product, true) ?></div>
                             <div class="confix-produclist-category">
+                                <?php if($_product->getRatingSummary()): ?>
+                                        <?php echo $this->getReviewsSummaryHtml($_product, 'short') ?>
+                                <?php endif; ?>
                                 <?php if ($_product->isSaleable()): ?>
                                     <?php if (!($_product->getTypeInstance(true)->hasRequiredOptions($_product) || $_product->isGrouped())) { ?>
                                         <button type="button" title="<?php echo $this->__('Add To Cart') ?>"
@@ -80,7 +92,7 @@ $helper = Mage::helper('catalog/image');
                                                 class="button btn-cart mt-tooltip <?php if ($oType == true) echo 'option-file'; ?>"
                                                 onclick="setLocation('<?php echo $this->getAddToCartUrl($_product) ?>')">
                                             <span>
-                                                <span><?php echo $this->__("Add to cart"); ?></span>
+                                                <span><i class="fa fa-shopping-cart"></i></span>
                                             </span>
                                         </button>
                                     <?php } else { ?>
@@ -100,7 +112,7 @@ $helper = Mage::helper('catalog/image');
                                             <?php } ?>
                                                 data-submit='<?php echo $this->getAddToCartUrl($_product) ?>'>
                                             <span>
-                                               <span><?php echo $this->__("Add to cart"); ?></span>
+                                               <span><i class="fa fa-shopping-cart"></i></span>
                                             </span>
                                         </button>
 
@@ -109,8 +121,6 @@ $helper = Mage::helper('catalog/image');
                                     <p class="availability out-of-stock">
                                         <span><?php echo $this->__('Out of stock') ?></span></p>
                                 <?php endif; ?>
-                                    <div class="product-date" data-date="<?php echo Mage::helper('mtwidget')->getDate($_product) ?>"></div>
-
                             </div>
                         </div>
                     </div>

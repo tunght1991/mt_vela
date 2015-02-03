@@ -9,6 +9,7 @@
  */
 ?>
 <?php
+/*PRODUCT NEWS*/
 /* @var $this MT_Widget_Block_Widget_Collection */
 $productCollection = $this->getData('collection');
 $count = $productCollection ? $productCollection->count() : 0;
@@ -27,13 +28,12 @@ $helper = Mage::helper('catalog/image');
     foreach ($productCollection as $_product): ?>
         <?php /* @var $_product Mage_Catalog_Model_Product */ ?>
         <?php if ($carousel == 1 && $row > 1 && $i == 0): ?>
-            <div class="owl-carousel">
+            <div class="owl-carousel category-products mt-products-list">
         <?php endif ?>
         <?php if ($i % $column == 0 || ($row > 1 && $i % $row == 0)): ?>
-        <div class="row">
-        <div class="category-products collection-position01">
+        <div class="category-products collection-position04">
         <ul class="products-grid  <?php echo $carousel && $row == 1 ? ' owl-carousel' : '' ?>">
-    <?php endif ?>
+        <?php endif ?>
         <?php $i++ ?>
         <li class="item">
             <div class="product-item">
@@ -128,7 +128,6 @@ $helper = Mage::helper('catalog/image');
         </li>
         <?php if ($i == $count || $i % $column == 0 || ($row > 1 && $i % $row == 0)): ?>
         </ul>
-        </div>
         </div>
     <?php endif ?>
         <?php if ($carousel == 1 && $row > 1 && $i == $count): ?>

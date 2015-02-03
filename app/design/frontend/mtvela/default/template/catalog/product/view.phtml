@@ -97,8 +97,8 @@ $_next = Mage::helper('mtvela')->getNextProduct();
                 $mediaCol = 'col-md-12';
                 $producInfoCol = 'col-md-12';
             }elseif($layout=='custom2'){
-                $mediaCol = 'col-md-5 col-sm-12 col-xs-12';
-                $producInfoCol = 'col-md-7 col-sm-12 col-xs-12';
+                $mediaCol = 'col-md-5 col-sm-5 col-xs-12';
+                $producInfoCol = 'col-md-7 col-sm-7 col-xs-12';
             }
         ?>
         <div class="product-img-box <?php echo $mediaCol;?>">
@@ -112,8 +112,6 @@ $_next = Mage::helper('mtvela')->getNextProduct();
                 <div class="product-name">
                     <h1><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?></h1>
                 </div>
-
-
                 <?php echo $this->getReviewsSummaryHtml($_product, false, true) ?>
                 <?php echo $this->getPriceHtml($_product) ?>
                 <?php echo $this->getTierPriceHtml() ?>
@@ -149,34 +147,7 @@ $_next = Mage::helper('mtvela')->getNextProduct();
                         </div>
                     </div>
                 <?php endif;?>
-                <div class="attribute-list">
-                    <ul>
-                        <li>
-                            <?php if(isset($_category_detail)){?>
-                            <label><?php echo $this->__('Categories: ');?></label>
-                            <span><?php echo  $_category_detail->getName();?></span>
-                            <?php }?>
-                        </li>
-                        <?php if($_product->getAttributeText('mater')!=''):?>
-                            <li>
-                                <label><?php echo $this->__('Materials: ');?></label>
-                                <span><?php echo  $_product->getAttributeText('mater')?></span>
-                            </li>
-                        <?php else: ?>
 
-                        <?php endif;?>
-                        <?php if($_product->getAttributeText('gemstones')!=''):?>
-                            <li>
-                                <label><?php echo $this->__('Gemstones: ');?></label>
-                                <span><?php echo  $_product->getAttributeText('gemstones')?></span>
-                            </li>
-                        <?php else: ?>
-
-                        <?php endif;?>
-                    </ul>
-                </div>
-
-                <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('block_detail_social_share')->toHtml();?>
                 <?php if (!$this->hasOptions()):?>
                     <div class="add-to-box">
                         <div class="add-to-cart">
@@ -280,9 +251,9 @@ $_next = Mage::helper('mtvela')->getNextProduct();
     //]]>
     </script>
     </div>
-    <div class="product-collateral row show-grid">
-        <?php echo $this->getLayout()->createBlock("catalog/product_view_description")->setTemplate("catalog/product/view/description.phtml")->toHtml();?>
-        <?php echo $this->getLayout()->createBlock("review/form")->setTemplate("review/form.phtml")->toHtml();?>
+    <div class="product-collateral">
+        <?php echo $this->getChildHtml('info_tabs') ?>
+        <?php echo $this->getChildHtml('product_additional_data') ?>
     </div>
     <?php
     if (isset($section['related']))

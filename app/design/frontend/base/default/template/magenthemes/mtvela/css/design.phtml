@@ -112,7 +112,7 @@ a:active,a:visited{
 text-decoration: none;
 }
 h1,h2,h3,h4,h5,h6{
-font-family: Crimson Text, arial, serif;
+font-family: Raleway, arial, serif;
 }
 
 
@@ -531,16 +531,14 @@ background-color: @footer_bg_color;
 @footer_hover_color: <?php echo $cfgstore['footer']['link_hover_color']; ?>;
 @footer_color: <?php echo $cfgstore['footer']['color']; ?>;
 @footer_bg_color : <?php echo $cfgstore['footer']['bg_color']; ?>;
+@footer_btn_hover_color : <?php echo $cfgstore['footer']['button_hover_color']; ?>;
 
 .footer-container .footer-bottom .footer a { color :@footer_link_color ; }
 
 .footer-container .footer-top .footer a .fa { color : @footer_color ;}
-.footer-container .footer-top .footer a:hover ,
-.footer-container .footer-top .footer a:hover .fa { color : @footer_hover_color ;}
-
-.footer-container .footer-inner{
-background-color:@footer_bg_color;
-}
+.footer-container .footer-top .footer a:hover{color: @footer_hover_color ;}
+.footer-container .footer-top .footer a:hover .fa {color :@footer_btn_hover_color;}
+.footer-container .footer-inner{background-color:@footer_bg_color;}
 
 
 

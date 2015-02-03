@@ -39,15 +39,53 @@ $margin = (int)Mage::getStoreConfig('mtvela/product_page/zoom_margin');
 <?php if ($_product->getImage() != 'no_selection' && $_product->getImage() && Mage::getStoreConfig('mtvela/product_page/zoom_enable')): ?>
     <p class="product-image">
         <a class="cloud-zoom" id="zoomID" style="position: relative; display: block;" rel="<?php echo Mage::helper('mtvela')->getCloudZoomConfig(true)?>" href="<?php echo $this->helper('catalog/image')->init($_product, 'image')?>">
-            <img class="img-responsive" alt="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" style="display: block" src="<?php echo $this->helper('catalog/image')->init($this->getProduct(), 'image')->resize(517,577)?>">
+            <img class="img-responsive" alt="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" style="display: block" src="<?php echo $this->helper('catalog/image')->init($this->getProduct(), 'image')->resize(352,333)?>">
         </a>
     </p>
 <?php else: ?>
     <p class="product-image">
         <?php
-        $_img = '<img style="display: block;" src="'.$this->helper('catalog/image')->init($_product, 'image')->resize(400).'" alt="'.$this->htmlEscape($this->getImageLabel()).'" title="'.$this->htmlEscape($this->getImageLabel()).'" />';
+        $_img = '<img style="display: block;" src="'.$this->helper('catalog/image')->init($_product, 'image')->resize(352,333).'" alt="'.$this->htmlEscape($this->getImageLabel()).'" title="'.$this->htmlEscape($this->getImageLabel()).'" />';
         echo $_helper->productAttribute($_product, $_img, 'image');
         ?>
     </p>
 <?php endif; ?>
-
+<?php if (count($this->getGalleryImages()) > 0): ?>
+    <div class="more-views" id="moreViews">
+        <!--<h2><?php //echo $this->__('More Views') ?></h2>-->
+        <ul class="slides">
+            <?php foreach ($this->getGalleryImages() as $_image): ?>
+                <li>
+                    <a href="<?php echo $_image->getUrl()?>" title="<?php echo $this->htmlEscape($_image->getLabel())?>" class="cloud-zoom-gallery" rel="useZoom:'zoomID',smallImage:'<?php echo $this->helper('catalog/image')->init($this->getProduct(), 'image', $_image->getFile())->resize(352, 333)?>'">
+                        <img class="img-responsive" src="<?php echo $this->helper('catalog/image')->init($this->getProduct(), 'thumbnail', $_image->getFile())->resize(88, 83)?>" width="88" height="83" alt="<?php echo $this->htmlEscape($_image->getLabel())?>" />
+                    </a>
+                </li>
+            <?php endforeach; ?>
+        </ul>
+    </div>
+    <?php if(Mage::getStoreConfig('mtvela/product_page/zoom_enable')):?>
+        <script type="text/javascript">
+            $mt(document).ready(function(){
+                bindMoreViewsFlexSlider();
+            });
+            function bindMoreViewsFlexSlider(){
+                var count = <?php echo Mage::getStoreConfig('mtvela/product_page/zoom_count') ? (int)Mage::getStoreConfig('mtvela/product_page/zoom_count') : 1?>;
+                $mt('#moreViews').flexslider({
+                    namespace: 'more-views-',
+                    slideshow: false,
+                    animation: "slide",
+                    itemWidth: getMoreViewsItemWidth('moreViews', count, <?php echo $margin ?>),
+                    itemMargin: <?php echo $margin ?>,
+                    minItems: 1,
+                    maxItems: count,
+                    selector: ".slides > li",
+                    controlNav: false
+                });
+            }
+            function getMoreViewsItemWidth(id, column, margin){
+                var width = $mt('#'+id).width();
+                return (width/column).toFixed(2) - margin*2;
+            }
+        </script>
+    <?php endif; ?>
+<?php endif; ?>

@@ -30,8 +30,7 @@ $helper = Mage::helper('catalog/image');
             <div class="owl-carousel">
         <?php endif ?>
         <?php if ($i % $column == 0 || ($row > 1 && $i % $row == 0)): ?>
-        <div class="row">
-        <div class="category-products collection-position02">
+        <div class="category-products collection-position03">
         <ul class="products-grid  <?php echo $carousel && $row == 1 ? ' owl-carousel' : '' ?>">
     <?php endif ?>
         <?php $i++ ?>
@@ -39,79 +38,34 @@ $helper = Mage::helper('catalog/image');
             <div class="product-item">
                 <div class="product-hover">
                     <div class="product-hover-inner">
-                        <div class="product-hover-inner">
                             <a href="<?php echo $_product->getProductUrl() ?>"
                                title="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>"
                                class="product-image img-responsive">
-                                <?php echo $this->helper('mtvela')->getLabel($_product); ?>
                                 <span class="front margin-image">
                                     <?php if ($carousel == 1): ?>
                                         <img
-                                            data-src="<?php echo $helper->init($_product, 'small_image')->resize(270, 255); ?>"
+                                            data-src="<?php echo $helper->init($_product, 'small_image')->resize(113, 105); ?>"
                                             src="<?php echo $this->getSkinUrl('images/loader.gif') ?>"
                                             class="lazyOwl img-responsive lazy <?php echo $hoveraltClass; ?>"
                                             alt="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>"/>
                                     <?php else: ?>
                                         <img
-                                            src="<?php echo $helper->init($_product, 'small_image')->resize(270, 255); ?>"
+                                            src="<?php echo $helper->init($_product, 'small_image')->resize(113, 105); ?>"
                                             alt="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>"/>
                                     <?php endif ?>
                             </span>
                             </a>
+                    </div>
 
-                            <div class="product-intification-box"><i class="fa fa-circle-o-notch fa-spin"></i></div>
-                        </div>
+                    <div class="left-details-product">
+                        <div class="left-product-content">
+                            <h3 class="product-name">
+                                <a href="<?php echo $_product->getProductUrl() ?>"
+                                   title="<?php echo $this->stripTags($_product->getName(), null, true) ?>">
+                                    <?php echo $this->escapeHtml($_product->getName()) ?>
+                                </a>
+                            </h3>
 
-                        <div class="bottom-product">
-                            <div class="bottom-product-content">
-                                <h3 class="product-name">
-                                    <a href="<?php echo $_product->getProductUrl() ?>"
-                                       title="<?php echo $this->stripTags($_product->getName(), null, true) ?>">
-                                        <?php echo $this->escapeHtml($_product->getName()) ?>
-                                    </a>
-                                </h3>
-
-                                <div class="table"><?php echo $this->getPriceHtml($_product, true) ?></div>
-                                <div class="confix-produclist-category">
-                                    <?php if ($_product->isSaleable()): ?>
-                                        <?php if (!($_product->getTypeInstance(true)->hasRequiredOptions($_product) || $_product->isGrouped())) { ?>
-                                            <button type="button" title="<?php echo $this->__('Add To Cart') ?>"
-                                                    data-placement="top"
-                                                    class="button btn-cart mt-tooltip <?php if ($oType == true) echo 'option-file'; ?>"
-                                                    onclick="setLocation('<?php echo $this->getAddToCartUrl($_product) ?>')">
-                                                <span>
-                                                    <span><?php echo $this->__("Add to cart"); ?></span>
-                                                </span>
-                                            </button>
-                                        <?php } else { ?>
-                                            <?php if (Mage::getStoreConfig('ajaxcart/ajaxcart_config/enable_ajaxcart')) : ?>
-                                                <a style="display: none;"
-                                                   href='<?php echo $this->getUrl('ajaxcart/index/options', array('product_id' => $_product->getId())); ?>'
-                                                   class='options-cart'
-                                                   data-id='options-cart-<?php echo $_product->getId() ?>'><?php echo $this->__('Option cart') ?></a>
-                                            <?php endif; ?>
-
-                                            <button type="button" title="<?php echo $this->__('Add To Cart') ?>"
-                                                    data-placement="top"
-                                                    class="button btn-cart show-options mt-tooltip"
-                                                    data-id="<?php echo $_product->getId(); ?>"
-                                                <?php if (!Mage::getStoreConfig('ajaxcart/ajaxcart_config/enable_ajaxcart')) { ?>
-                                                    onclick="setLocation('<?php echo $this->getAddToCartUrl($_product) ?>')"
-                                                <?php } ?>
-                                                    data-submit='<?php echo $this->getAddToCartUrl($_product) ?>'>
-                                                <span>
-                                                   <span><?php echo $this->__("Add to cart"); ?></span>
-                                                </span>
-                                            </button>
-
-                                        <?php } ?>
-                                    <?php else: ?>
-                                        <p class="availability out-of-stock">
-                                            <span><?php echo $this->__('Out of stock') ?></span></p>
-                                    <?php endif; ?>
-                                    <div class="product-date" data-date="<?php echo Mage::helper('mtwidget')->getDate($_product) ?>"></div>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -119,7 +73,6 @@ $helper = Mage::helper('catalog/image');
         </li>
         <?php if ($i == $count || $i % $column == 0 || ($row > 1 && $i % $row == 0)): ?>
         </ul>
-        </div>
         </div>
     <?php endif ?>
         <?php if ($carousel == 1 && $row > 1 && $i == $count): ?>

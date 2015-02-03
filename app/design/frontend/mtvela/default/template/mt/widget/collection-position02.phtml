@@ -73,42 +73,6 @@ $helper = Mage::helper('catalog/image');
 
                                 <div class="table"><?php echo $this->getPriceHtml($_product, true) ?></div>
                                 <div class="confix-produclist-category">
-                                    <?php if ($_product->isSaleable()): ?>
-                                        <?php if (!($_product->getTypeInstance(true)->hasRequiredOptions($_product) || $_product->isGrouped())) { ?>
-                                            <button type="button" title="<?php echo $this->__('Add To Cart') ?>"
-                                                    data-placement="top"
-                                                    class="button btn-cart mt-tooltip <?php if ($oType == true) echo 'option-file'; ?>"
-                                                    onclick="setLocation('<?php echo $this->getAddToCartUrl($_product) ?>')">
-                                                <span>
-                                                    <span><?php echo $this->__("Add to cart"); ?></span>
-                                                </span>
-                                            </button>
-                                        <?php } else { ?>
-                                            <?php if (Mage::getStoreConfig('ajaxcart/ajaxcart_config/enable_ajaxcart')) : ?>
-                                                <a style="display: none;"
-                                                   href='<?php echo $this->getUrl('ajaxcart/index/options', array('product_id' => $_product->getId())); ?>'
-                                                   class='options-cart'
-                                                   data-id='options-cart-<?php echo $_product->getId() ?>'><?php echo $this->__('Option cart') ?></a>
-                                            <?php endif; ?>
-
-                                            <button type="button" title="<?php echo $this->__('Add To Cart') ?>"
-                                                    data-placement="top"
-                                                    class="button btn-cart show-options mt-tooltip"
-                                                    data-id="<?php echo $_product->getId(); ?>"
-                                                <?php if (!Mage::getStoreConfig('ajaxcart/ajaxcart_config/enable_ajaxcart')) { ?>
-                                                    onclick="setLocation('<?php echo $this->getAddToCartUrl($_product) ?>')"
-                                                <?php } ?>
-                                                    data-submit='<?php echo $this->getAddToCartUrl($_product) ?>'>
-                                                <span>
-                                                   <span><?php echo $this->__("Add to cart"); ?></span>
-                                                </span>
-                                            </button>
-
-                                        <?php } ?>
-                                    <?php else: ?>
-                                        <p class="availability out-of-stock">
-                                            <span><?php echo $this->__('Out of stock') ?></span></p>
-                                    <?php endif; ?>
                                     <div class="product-date" data-date="<?php echo Mage::helper('mtwidget')->getDate($_product) ?>"></div>
                                 </div>
                             </div>

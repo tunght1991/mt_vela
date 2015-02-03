@@ -25,15 +25,23 @@
  */
 ?>
 <?php if($crumbs && is_array($crumbs)): ?>
-<div class="breadcrumbs">
-    <ul>
-        <?php foreach($crumbs as $_crumbName=>$_crumbInfo): ?>
-            <li class="<?php echo $_crumbName ?>">
-            <?php if($_crumbInfo['link']): ?>
-                <span class="icon-arrows icon-arrows-circle-right"></span><a href="<?php echo $_crumbInfo['link'] ?>" title="<?php echo $this->htmlEscape($_crumbInfo['title']) ?>"><?php echo $this->htmlEscape('Back to home') ?></a>
-            <?php endif; ?>
-            </li>
-        <?php break; endforeach; ?>
-    </ul>
-</div>
+    <div class="breadcrumbs">
+        <ul>
+            <?php foreach($crumbs as $_crumbName=>$_crumbInfo): ?>
+                <li class="<?php echo $_crumbName ?>">
+                    <?php if($_crumbInfo['link']): ?>
+                        <a href="<?php echo $_crumbInfo['link'] ?>" title="<?php echo $this->htmlEscape($_crumbInfo['title']) ?>"><?php echo $this->htmlEscape($_crumbInfo['label']) ?></a>
+                    <?php elseif($_crumbInfo['last']): ?>
+                        <strong><?php echo $this->htmlEscape($_crumbInfo['label']) ?></strong>
+                    <?php else: ?>
+                        <?php echo $this->htmlEscape($_crumbInfo['label']) ?>
+                    <?php endif; ?>
+                    <?php if(!$_crumbInfo['last']): ?>
+
+                    <?php endif; ?>
+                </li>
+
+            <?php endforeach; ?>
+        </ul>
+    </div>
 <?php endif; ?>

@@ -35,14 +35,14 @@ $desc = $helper->getCfgIntro();
     <div class="block-title">
         <strong><span><?php echo $this->__('Newsletter') ?></span></strong>
     </div>
-    <form action="<?php echo $this->getFormActionUrl() ?>" method="post" id="newsletter-validate-detail">
+    <form action="<?php echo $this->getFormActionUrl() ?>" method="post" class="form-inline" id="newsletter-validate-detail">
         <div class="block-content">
             <div class="form-group">
                 <div class="input-box">
                    <input type="text" name="email" id="newsletter" value="Your email" title="<?php echo $this->__('Sign up for our newsletter') ?>" class="input-text required-entry validate-email validation-failed" onclick="this.value=='Your email'?this.value='':''" onblur="this.value==''?this.value='Your email':''" />
-                    <button type="submit" title="<?php echo $this->__('Subscribe') ?>" class="button"><span><span><?php echo $this->__('Subscribe') ?></span></span></button>
                 </div>
             </div>
+            <button type="submit" title="<?php echo $this->__('Subscribe') ?>" class="button"><span><span><?php echo $this->__('Subscribe') ?></span></span></button>
         </div>
     </form>
     <script type="text/javascript">

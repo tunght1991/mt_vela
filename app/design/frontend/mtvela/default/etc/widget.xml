@@ -37,6 +37,18 @@
                         <value>mt/widget/position01.phtml</value>
                         <label>position01</label>
                     </position01>
+                    <attribute translate="label">
+                        <value>mt/widget/attribute.phtml</value>
+                        <label>attribute</label>
+                    </attribute>
+                    <position03 translate="label">
+                        <value>mt/widget/position03.phtml</value>
+                        <label>position03</label>
+                    </position03>
+                    <position04 translate="label">
+                        <value>mt/widget/position04.phtml</value>
+                        <label>position04</label>
+                    </position04>
                     <position02 translate="label">
                         <value>mt/widget/position02.phtml</value>
                         <label>position02</label>

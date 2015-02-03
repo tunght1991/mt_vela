@@ -153,7 +153,6 @@
             <action method="unsetChild"><name>tags_popular</name></action>
 
             <block type="reports/product_compared" name="right.reports.product.compared" template="reports/product_compared.phtml" />
-            <block type="reports/product_viewed" name="left.reports.product.viewed" template="reports/product_viewed.phtml" />
             <block type="wishlist/customer_sidebar" name="wishlist_sidebar" as="wishlist" template="wishlist/sidebar.phtml"/>
 
 
@@ -219,7 +218,7 @@
             </action>
             <action method="addItem" ifconfig="mtvela/product_page/zoom_enable">
                 <type>js</type>
-                <file>magenthemes/jquery/plugins/owl-carousel/owl.carousel.min.js</file>
+                <file>magenthemes/jquery/plugins/flexslider/jquery.flexslider.js</file>
             </action>
             <action method="addItem" ifconfig="mtvela/product_page/zoom_enable">
                 <type>js_css</type>
@@ -228,17 +227,32 @@
         </reference>
         <!-- Change default template for product view. IMPORTANT: the same as in 'review_product_list'. -->
         <reference name="root">
-            <action method="setTemplate"><template>page/1column.phtml</template></action>
+            <action method="setTemplate"><template>page/2columns-left.phtml</template></action>
         </reference>
 
         <reference name="right">
             <action method="unsetChild"><name>catalog.product.related</name></action>
         </reference>
-
+        <reference name="left">
+            <block type="mtvela/mainmenu_menu" name="magenthemes.catnav" template="magenthemes/mainmenu/vertical.phtml" before="-" />
+        </reference>
 
         <reference name="product.info">
             <!--Add Tabs-->
-
+            <block type="catalog/product_view_tabs" name="product.info.tabs" as="info_tabs" template="catalog/product/view/tabs.phtml" >
+                <action method="addTab" translate="title" module="catalog"><alias>description</alias><title>Product Description</title><block>catalog/product_view_description</block><template>catalog/product/view/description.phtml</template></action>
+                <action method="addTab" translate="title" module="catalog"><alias>tabreviews</alias><title>Reviews</title><block>review/product_view_list</block><template>review/product/view/list.phtml</template></action>
+                <!-- Add custom tabs -->
+                <block type="cms/block" name="block_product_tab1">
+                    <action method="setBlockId"><block_id>block_product_tab1</block_id></action>
+                </block>
+                <block type="cms/block" name="block_product_tab2">
+                    <action method="setBlockId"><block_id>block_product_tab2</block_id></action>
+                </block>
+                <block type="core/text_list" name="upsell_products" as="upsell_products">
+                    <label>Upsell Products</label>
+                </block>
+            </block>
             <!-- end: Add tabs -->
             <!-- Review Form -->
             <reference name="tabreviews">
@@ -253,10 +267,10 @@
 
             <!-- end: Review Form -->
             <!-- Product tags list -->
-            <reference name="product_additional_data">
-                <remove name="product_tag_list"></remove>
+            <reference name="product.info.additional">
+                <action method="unsetChild"><name>product_tag_list</name></action>
             </reference>
-       
+
             <block type="cms/block" name="block_product_slidebar_right">
                 <action method="setBlockId"><block_id>block_product_slidebar_right</block_id></action>
             </block>
@@ -282,8 +296,8 @@
         </reference>
 
 
-        <reference name="right">
-            <block type="mtvela/mainmenu_menu" name="magenthemes.catnav" template="magenthemes/mainmenu/categories.phtml" before="-" />
+        <reference name="left">
+            <block type="mtvela/mainmenu_menu" name="magenthemes.catnav" template="magenthemes/mainmenu/vertical.phtml" before="-" />
             <action method="unsetChild"><name>right.permanent.callout</name></action>
             <action method="unsetChild"><name>paypal.partner.right.logo</name></action>
         </reference>
@@ -310,8 +324,8 @@
             <remove name="breadcrumbs"></remove>
         </reference>
 
-        <reference name="right">
-            <block type="mtvela/mainmenu_menu" name="magenthemes.catnav" template="magenthemes/mainmenu/categories.phtml" before="-" />
+        <reference name="left">
+            <block type="mtvela/mainmenu_menu" name="magenthemes.catnav" template="magenthemes/mainmenu/vertical.phtml" before="-" />
             <action method="unsetChild"><name>currency</name></action>
             <action method="unsetChild"><name>right.permanent.callout</name></action>
             <action method="unsetChild"><name>paypal.partner.right.logo</name></action>
