@@ -106,9 +106,9 @@ if ($cfdphover != 0) {
                                                             data-placement="top"
                                                             class="button btn-cart mt-tooltip <?php if ($oType == true) echo 'option-file'; ?>"
                                                             onclick="setLocation('<?php echo $this->getAddToCartUrl($_product) ?>')">
-                                                <span>
-                                                    <span><?php echo $this->__("Add to cart"); ?></span>
-                                                </span>
+                                                        <span>
+                                                            <span><i class="fa fa-shopping-cart"></i></span>
+                                                        </span>
                                                     </button>
                                                 <?php } else { ?>
                                                     <?php if (Mage::getStoreConfig('ajaxcart/ajaxcart_config/enable_ajaxcart')) : ?>
@@ -126,9 +126,9 @@ if ($cfdphover != 0) {
                                                             onclick="setLocation('<?php echo $this->getAddToCartUrl($_product) ?>')"
                                                         <?php } ?>
                                                             data-submit='<?php echo $this->getAddToCartUrl($_product) ?>'>
-                                                <span>
-                                                   <span><?php echo $this->__("Add to cart"); ?></span>
-                                                </span>
+                                                        <span>
+                                                           <span><i class="fa fa-shopping-cart"></i></span>
+                                                        </span>
                                                     </button>
 
                                                 <?php } ?>
@@ -211,7 +211,7 @@ if ($cfdphover != 0) {
                                                             class="button btn-cart mt-tooltip <?php if ($oType == true) echo 'option-file'; ?>"
                                                             onclick="setLocation('<?php echo $this->getAddToCartUrl($_product) ?>')">
                                                 <span>
-                                                    <span><?php echo $this->__("Add to cart"); ?></span>
+                                                    <span><i class="fa fa-shopping-cart"></i></span>
                                                 </span>
                                                     </button>
                                                 <?php } else { ?>

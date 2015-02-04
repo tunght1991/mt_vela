@@ -203,8 +203,8 @@ $compareHeader = $theme->getCfg('header/compare');
             var lang = $mt(e).html().toLowerCase();
         });
         $mt('.block-currency .sbHolder:eq(0)').addClass('currency');
-        $mt(".sbHolder.lang .sbToggle").empty().append(selectToggleRight);
-        $mt(".sbHolder.currency .sbToggle").empty().append(selectToggleRight);
+        $mt(".sbHolder.lang .sbToggle").empty().append(selectToggle);
+        $mt(".sbHolder.currency .sbToggle").empty().append(selectToggle);
     });
     $mt(document).ready(function(){
         var iconMenu = $mt(".bottom-header").find(".mt-icon-ajax").find(".fa-bars"),

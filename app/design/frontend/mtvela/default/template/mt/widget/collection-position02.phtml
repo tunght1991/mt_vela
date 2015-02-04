@@ -30,7 +30,6 @@ $helper = Mage::helper('catalog/image');
             <div class="owl-carousel">
         <?php endif ?>
         <?php if ($i % $column == 0 || ($row > 1 && $i % $row == 0)): ?>
-        <div class="row">
         <div class="category-products collection-position02">
         <ul class="products-grid  <?php echo $carousel && $row == 1 ? ' owl-carousel' : '' ?>">
     <?php endif ?>
@@ -54,6 +53,7 @@ $helper = Mage::helper('catalog/image');
                                     <?php else: ?>
                                         <img
                                             src="<?php echo $helper->init($_product, 'small_image')->resize(270, 255); ?>"
+                                            class="img-responsive"
                                             alt="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>"/>
                                     <?php endif ?>
                             </span>
@@ -83,7 +83,6 @@ $helper = Mage::helper('catalog/image');
         </li>
         <?php if ($i == $count || $i % $column == 0 || ($row > 1 && $i % $row == 0)): ?>
         </ul>
-        </div>
         </div>
     <?php endif ?>
         <?php if ($carousel == 1 && $row > 1 && $i == $count): ?>

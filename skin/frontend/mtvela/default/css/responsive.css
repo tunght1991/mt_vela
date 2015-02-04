@@ -30,6 +30,10 @@
     .category-products #products-list .std{padding: 15px 0 1px;margin: 0;}
     .category-products #products-list .price-box{padding-bottom:15px;}
     #shopping-cart-table .cart-price{letter-spacing: 0.1em;padding-left: 5px;padding-right: 5px;}
+    #search_mini_form #search{width: 270px;}
+    .megamenu-vertical li.level0 a {
+        font-size: 95%;
+    }
 }
 @media (min-width: 768px) and (max-width: 991px) {
     /*============HEADER=====================*/
@@ -65,6 +69,37 @@
     #mtnav .sub-wrapper .mm-item-base {
         padding: 5px;
     }
+    .megamenu-vertical li.level0.nav-1 > a:before,.megamenu-vertical li.level0.nav-2 > a:before,.megamenu-vertical li.level0.nav-3 > a:before,.megamenu-vertical li.level0.nav-4 > a:before
+    ,.megamenu-vertical li.level0.nav-5 > a:before,.megamenu-vertical li.level0.nav-6 > a:before,.megamenu-vertical li.level0.nav-7 > a:before,.megamenu-vertical li.level0.nav-8 > a:before,
+    .megamenu-vertical li.level0.nav-9 > a:before
+    {
+        padding-left: 10px;
+        font-size: 13px;
+    }
+    .mt-navigation-vertical .block-title span.fa-bars{
+        padding-left: 10px;
+    }
+    .mt-navigation-vertical .block-title span{
+        padding: 7px 10px;
+        font-size: 14px;
+    }
+    .mt-main-menu-vertical li.level0 > a span{
+        padding-left: 10px;
+        font-size: 10px;
+    }
+    .mt-main-menu-vertical li.level0 > a:hover span{
+        padding-left: 15px;
+    }
+    #search_mini_form #search{
+        width: 150px;
+    }
+    .main_slide_left .mt-main-menu-vertical div.shown-sub, .col-left .mt-main-menu-vertical div.shown-sub{
+        left: 165px !important;
+        width: 555px;
+    }
+    .megamenu-vertical li.level0 a {font-size: 75% ;}
+    .megamenu-vertical li.level0 ul li.groups > a{font-size: 75% ;}
+    .megamenu-vertical .blog-menu span{font-size: 80% ;}
 }
 
 @media (min-width: 768px) and (max-width: 979px) {

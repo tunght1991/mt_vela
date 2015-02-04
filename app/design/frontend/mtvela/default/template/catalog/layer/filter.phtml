@@ -36,12 +36,13 @@
 <?php foreach ($this->getItems() as $_item): ?>
     <li>
         <?php if ($_item->getCount() > 0): ?>
-        <a href="<?php echo $this->urlEscape($_item->getUrl()) ?>"><?php echo $_item->getLabel() ?></a>
+        <a href="<?php echo $this->urlEscape($_item->getUrl()) ?>"><?php echo $_item->getLabel() ?>&nbsp;
+            <?php if ($this->shouldDisplayProductCount()): ?>
+                (<?php echo $_item->getCount() ?>)
+            <?php endif; ?></a>
         <?php else: echo $_item->getLabel() ?>
         <?php endif; ?>
-        <?php if ($this->shouldDisplayProductCount()): ?>
-        (<?php echo $_item->getCount() ?>)
-        <?php endif; ?>
+
     </li>
 <?php endforeach ?>
 </ol>

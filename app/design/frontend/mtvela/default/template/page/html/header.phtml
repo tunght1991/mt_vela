@@ -44,13 +44,10 @@ $mediaUrl = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA);
             <div class="top-header">
                 <div class="container">
                     <div class="row">
-                        <div class="col-lg-6  col-md-6 col-sm-6  col-xs-12">
+                        <div class="col-lg-2  col-md-2 col-sm-2  col-xs-12">
                             <div class="header-top-left">
-                                <div class="top-link">
-                                    <?php if ($toplink): ?>
-                                        <?php echo $this->getChildHtml('topLinks') ?>
-                                    <?php endif; ?>
-                                </div>
+                                <?php echo $this->getChildHtml('store_language') ?>
+                                <?php echo $this->getChildHtml('custom_currency_selector') ?>
                             </div>
                             <?php if ($compareHeader): ?>
                                 <div class="top-compare">
@@ -70,15 +67,14 @@ $mediaUrl = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA);
                                     </div>
                                 </div>
                             <?php endif; ?>
-                            <?php //echo $this->getChildHtml('store_language') ?>
-                            <?php //echo $this->getChildHtml('custom_currency_selector') ?>
+
                         </div>
-                        <div class="col-lg-3  col-md-3 col-sm-3 col-xs-12">
+                        <div class="col-lg-4  col-md-4 col-sm-4 col-xs-12">
                             <div class="mt-top-contact">
                                 <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('top-contact')->toHtml(); ?>
                             </div>
                         </div>
-                        <div class="col-lg-3  col-md-3 col-sm-3 col-xs-12">
+                        <div class="col-lg-6  col-md-6 col-sm-6 col-xs-12">
                             <div class="mt-top-social">
                                 <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('social')->toHtml(); ?>
                             </div>

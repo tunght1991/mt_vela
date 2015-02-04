@@ -307,11 +307,15 @@
             <block type="cms/block" name="block_category_above_collection">
                 <action method="setBlockId"><block_id>block_category_above_collection</block_id></action>
             </block>
+
             <!-- end: Add static blocks -->
         </reference>
 
         <reference name="category.products">
             <action method="insert"><blockName>catalog.leftnav</blockName></action>
+        </reference>
+        <reference name="catalog.leftnav">
+            <action method="unsetChild"><child>category_filter</child></action>
         </reference>
     </catalog_category_default>
 
@@ -336,10 +340,14 @@
             <block type="cms/block" name="block_category_above_collection">
                 <action method="setBlockId"><block_id>block_category_above_collection</block_id></action>
             </block>
+
             <!-- end: Add static blocks -->
         </reference>
         <reference name="category.products">
             <action method="insert"><blockName>catalog.leftnav</blockName></action>
+        </reference>
+        <reference name="catalog.leftnav">
+            <action method="unsetChild"><child>category_filter</child></action>
         </reference>
     </catalog_category_layered>
 
