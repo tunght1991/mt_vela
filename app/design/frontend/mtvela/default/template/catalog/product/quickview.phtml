@@ -148,6 +148,10 @@
                 Object.extend(Validation.methods, nv);
             }
         }.bind(productAddToCartForm);
+        $mt(window).load(function(){
+            var y = $mt('.product-quick-view').height();
+            parent.$mt.colorbox.resize({height:y+20});
+        });
     //]]>
     </script>
     </div>

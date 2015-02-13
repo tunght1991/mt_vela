@@ -26,12 +26,8 @@
 ?>
 <?php /** @var $this Mage_Checkout_Block_Cart_Shipping */ ?>
 <div class="shipping">
-    <div class="col-lg-3">
-        <div class="row">
-            <strong><span><?php echo $this->__('Caculate Shipping') ?></span></strong>
-        </div>
-    </div>
-    <div class="shipping-form col-lg-9">
+    <h2><?php echo $this->__('Estimate Shipping and Tax') ?></h2>
+    <div class="shipping-form">
        <form action="<?php echo $this->getUrl('checkout/cart/estimatePost') ?>" method="post" id="shipping-zip-form">
             <ul class="form-list">
                 <li>
@@ -40,7 +36,7 @@
                     </div>
                 </li>
             <?php //if($this->getStateActive()): ?>
-                <li class="col-lg-6">
+                <li>
                     <div class="input-box">
                         <select id="region_id" name="region_id" title="<?php echo $this->__('State/Province') ?>" style="display:none;"<?php echo ($this->isStateProvinceRequired() ? ' class="validate-select"' : '') ?>>
                             <option value=""><?php echo $this->__('Please select region, state or province') ?></option>
@@ -61,7 +57,7 @@
                     </div>
                 </li>
             <?php endif; ?>
-                <li class="col-lg-6">
+                <li>
                     <div class="input-box">
                         <input class="input-text validate-postcode<?php if ($this->isZipCodeRequired()):?> required-entry<?php endif;?>" type="text" placeholder="<?php echo $this->__('Postcode / ZIP') ?>" id="postcode" name="estimate_postcode" value="<?php echo $this->escapeHtml($this->getEstimatePostcode()) ?>" />
                     </div>

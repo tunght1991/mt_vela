@@ -47,38 +47,36 @@
         <?php echo $this->getChildHtml('header') ?>
         <?php echo $this->getChildHtml('global_notices') ?>
         <section class="main-container col1-layout">
-            <div class="mt-widget-slider">
-                <div class="mt-preface">
-                    <div class="main_slide main_slide_inner">
-                        <div class="container"><?php echo $this->getChildHtml('preface') ?></div>
+            <div class="container">
+                <div class="mt-widget-slider">
+                    <div class="mt-preface">
+                        <div class="main_slide main_slide_inner">
+                            <?php echo $this->getChildHtml('preface') ?>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="main-breadcrumbs">
-                <div class="container">
+                <div class="main-breadcrumbs">
                     <?php echo $this->getChildHtml('breadcrumbs') ?>
                 </div>
-            </div>
-            <div class="main-top">
-                <div class="container">
-                        <?php echo $this->getChildHtml('main_top') ?>
-                    </div>
-            </div>
-            <div class="container-main">
-                <div class="main-content container">
+                <div class="main-top">
+                    <?php echo $this->getChildHtml('main_top') ?>
+                </div>
+                <div class="container-main">
+                    <div class="main-content">
                         <div class="col-main">
                             <?php echo $this->getChildHtml('global_messages') ?>
                             <?php echo $this->getChildHtml('content') ?>
                         </div>
+                    </div>
                 </div>
-            </div>
-            <div class="main-bottom container">
-                <?php echo $this->getChildHtml('main_bottom') ?>
-            </div>
-            <div class="row show-grid">
-                <div class="col-lg-12">
-                    <div class="mt-postscript"><?php echo $this->getChildHtml('postscript') ?></div>
+                <div class="main-bottom">
+                    <?php echo $this->getChildHtml('main_bottom') ?>
+                </div>
+                <div class="row show-grid">
+                    <div class="col-lg-12">
+                        <div class="mt-postscript"><?php echo $this->getChildHtml('postscript') ?></div>
+                    </div>
                 </div>
             </div>
         </section>

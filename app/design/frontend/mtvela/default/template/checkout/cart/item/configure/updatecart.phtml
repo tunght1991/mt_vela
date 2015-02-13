@@ -29,15 +29,22 @@
 <?php $buttonTitle = $this->__('Update Cart'); ?>
 <?php if ($_product->isSaleable()): ?>
         <?php if (!$_product->isGrouped()): ?>
-        <div class="quantity-input pull-left">
-            <div class="reduced items" onclick="var result = document.getElementById('qty'); var qty = result.value; if( !isNaN( qty ) &amp;&amp; qty > 1 ) result.value--;return false;">
-                <i class="fa fa-minus"></i>
+            <div class="pull-left qty">
+                <div class=" pull-left">
+                    <div class="custom-qty pull-left">
+                        <button type="button" class="reduced items  items-count" onclick="var result = document.getElementById('qty'); var qty = result.value; if( !isNaN( qty ) && qty > 1 ) result.value--;return false;">
+                            <i class="fa fa-minus "></i>
+                        </button>
+                    </div>
+                    <input type="text" name="qty" id="qty" maxlength="12" value="<?php echo $this->getProductDefaultQty() * 1 ?>" title="<?php echo $this->__('Qty') ?>" class="input-text qty" />
+
+                    <div class="custom-qty pull-left">
+                        <button type="button"  class="increase items items-count" onclick="var result = document.getElementById('qty'); var qty = result.value; if( !isNaN( qty )) result.value++;return false;">
+                            <i class="fa fa-plus"></i>
+                        </button>
+                    </div>
+                </div>
             </div>
-            <input type="text" name="qty" id="qty" maxlength="12" value="<?php echo $this->getProductDefaultQty() * 1 ?>" title="<?php echo $this->__('Qty') ?>" class="input-text qty validate-number" />
-            <div class="increase items" onclick="var result = document.getElementById('qty'); var qty = result.value; if( !isNaN( qty )) result.value++;return false;">
-                <i class="fa fa-plus"></i>
-            </div>
-        </div>
         <?php endif; ?>
     <button type="button" title="<?php echo $buttonTitle ?>" class="button btn-cart" onclick="productAddToCartForm.submit(this)"><span><span>
                     <strong style="font-size: 18px;" class="fs1" data-icon="" aria-hidden="true"></strong>

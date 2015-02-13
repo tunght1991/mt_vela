@@ -218,7 +218,7 @@
             </action>
             <action method="addItem" ifconfig="mtvela/product_page/zoom_enable">
                 <type>js</type>
-                <file>magenthemes/jquery/plugins/flexslider/jquery.flexslider.js</file>
+                <file>magenthemes/jquery/plugins/owl-carousel/owl.carousel.min.js</file>
             </action>
             <action method="addItem" ifconfig="mtvela/product_page/zoom_enable">
                 <type>js_css</type>
@@ -300,6 +300,9 @@
             <block type="mtvela/mainmenu_menu" name="magenthemes.catnav" template="magenthemes/mainmenu/vertical.phtml" before="-" />
             <action method="unsetChild"><name>right.permanent.callout</name></action>
             <action method="unsetChild"><name>paypal.partner.right.logo</name></action>
+            <block type="cms/block" name="block_static_1">
+                <action method="setBlockId"><block_id>homepage-static-1</block_id></action>
+            </block>
         </reference>
 
         <reference name="product_list">
@@ -333,6 +336,9 @@
             <action method="unsetChild"><name>currency</name></action>
             <action method="unsetChild"><name>right.permanent.callout</name></action>
             <action method="unsetChild"><name>paypal.partner.right.logo</name></action>
+            <block type="cms/block" name="block_static_1">
+                <action method="setBlockId"><block_id>homepage-static-1</block_id></action>
+            </block>
         </reference>
 
         <reference name="product_list">

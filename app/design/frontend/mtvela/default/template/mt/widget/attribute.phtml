@@ -26,7 +26,7 @@ $title      = $this->getConfig('widget_title');
                 <?php endif ?>
                 <?php if ($attribute['image']): ?>
                     <?php if ($scroll == 1): ?>
-                        <img class="lazyOwl" data-src="<?php echo $attribute['image'] ?>" alt="<?php echo $attribute['label'] ?>" />
+                        <img class="img-responsive lazyOwl" data-src="<?php echo $attribute['image'] ?>" alt="<?php echo $attribute['label'] ?>" />
                     <?php else: ?>
                         <img src="<?php echo $attribute['image'] ?>" alt="<?php echo $attribute['label'] ?>" />
                     <?php endif ?>

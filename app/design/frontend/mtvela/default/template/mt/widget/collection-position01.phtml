@@ -39,7 +39,6 @@ $helper = Mage::helper('catalog/image');
             <div class="product-item">
                 <div class="product-hover">
                     <div class="product-hover-inner">
-
                         <a href="<?php echo $_product->getProductUrl() ?>"
                            title="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>"
                            class="product-image img-responsive">
@@ -70,6 +69,7 @@ $helper = Mage::helper('catalog/image');
                                 foreach ($cats as $category_id) {
                                 $_cat = Mage::getModel('catalog/category')->load($category_id) ;
                                     echo $_cat->getName();
+                                    break;
                                 }
                             ?>
                             </span>

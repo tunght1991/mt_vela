@@ -39,7 +39,6 @@ $helper = Mage::helper('catalog/image');
             <div class="product-item">
                 <div class="product-hover">
                     <div class="product-hover-inner">
-
                         <a href="<?php echo $_product->getProductUrl() ?>"
                            title="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>"
                            class="product-image img-responsive">
@@ -82,6 +81,9 @@ $helper = Mage::helper('catalog/image');
 
                             <div class="table"><?php echo $this->getPriceHtml($_product, true) ?></div>
                             <div class="confix-produclist-category">
+                                <?php if($_product->getRatingSummary()): ?>
+                                    <?php echo $this->getReviewsSummaryHtml($_product, 'short') ?>
+                                <?php endif; ?>
                                 <?php if ($_product->isSaleable()): ?>
                                     <?php if (!($_product->getTypeInstance(true)->hasRequiredOptions($_product) || $_product->isGrouped())) { ?>
                                         <button type="button" title="<?php echo $this->__('Add To Cart') ?>"
@@ -118,8 +120,6 @@ $helper = Mage::helper('catalog/image');
                                     <p class="availability out-of-stock">
                                         <span><?php echo $this->__('Out of stock') ?></span></p>
                                 <?php endif; ?>
-                                    <div class="product-date" data-date="<?php echo Mage::helper('mtwidget')->getDate($_product) ?>"></div>
-
                             </div>
                         </div>
                     </div>

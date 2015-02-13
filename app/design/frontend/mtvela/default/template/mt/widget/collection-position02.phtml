@@ -42,7 +42,7 @@ $helper = Mage::helper('catalog/image');
                             <a href="<?php echo $_product->getProductUrl() ?>"
                                title="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>"
                                class="product-image img-responsive">
-                                <?php echo $this->helper('mtvela')->getLabel($_product); ?>
+                                <div class="product-hot-label"><?php echo $this->__('Hot')?></div>
                                 <span class="front margin-image">
                                     <?php if ($carousel == 1): ?>
                                         <img

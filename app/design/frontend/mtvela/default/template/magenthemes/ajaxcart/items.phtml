@@ -23,9 +23,9 @@ $config = Mage::getStoreConfig('ajaxcart/ajaxcart_config');
 ?>
 <li class="item">
     <?php if ($this->hasProductUrl()): ?>
-        <a href="<?php echo $this->getProductUrl()?>" title="<?php echo $this->htmlEscape($this->getProductName()) ?>" class="product-image"><img src="<?php echo $this->getProductThumbnail()->resize(57, 64)->setWatermarkSize('30x10'); ?>" width="64" height="64" alt="<?php echo $this->htmlEscape($this->getProductName()) ?>" /></a>
+        <a href="<?php echo $this->getProductUrl()?>" title="<?php echo $this->htmlEscape($this->getProductName()) ?>" class="product-image"><img src="<?php echo $this->getProductThumbnail()->resize(64, 64)->setWatermarkSize('30x10'); ?>" width="64" height="64" alt="<?php echo $this->htmlEscape($this->getProductName()) ?>" /></a>
     <?php else: ?>
-        <span class="product-image"><img src="<?php echo $this->getProductThumbnail()->resize(57, 64)->setWatermarkSize('30x10'); ?>" width="64" height="64" alt="<?php echo $this->htmlEscape($this->getProductName()) ?>" /></span>
+        <span class="product-image"><img src="<?php echo $this->getProductThumbnail()->resize(64, 64)->setWatermarkSize('30x10'); ?>" width="64" height="64" alt="<?php echo $this->htmlEscape($this->getProductName()) ?>" /></span>
     <?php endif; ?>
     <div class="product-details row-fluid show-grid">
         <p class="product-name clearfix"><?php if ($this->hasProductUrl()): ?><a href="<?php echo $this->getProductUrl() ?>"><?php endif; ?><?php echo $this->htmlEscape($this->getProductName()) ?><?php if ($this->hasProductUrl()): ?></a><?php endif; ?></p>

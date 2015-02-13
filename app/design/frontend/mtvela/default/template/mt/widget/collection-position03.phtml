@@ -65,7 +65,17 @@ $helper = Mage::helper('catalog/image');
                                     <?php echo $this->escapeHtml($_product->getName()) ?>
                                 </a>
                             </h3>
+                            <span class="date-update"><?php echo date("d M, Y", strtotime($_product->getUpdatedAt()));?></span>
+                            <?php
+                            $_reviews = Mage::getModel('review/review')->getResourceCollection();
+                            $_reviews->addStoreFilter( Mage::app()->getStore()->getId() )
+                                ->addEntityFilter('product', $_product->getId())
+                                ->addStatusFilter( Mage_Review_Model_Review::STATUS_APPROVED )
+                                ->setDateOrder()
+                                ->addRateVotes();
 
+                            ?>
+                            <span class="total-comment"><?php echo count($_reviews); ?></span>
                         </div>
                     </div>
                 </div>

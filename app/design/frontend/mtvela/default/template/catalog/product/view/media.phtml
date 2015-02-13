@@ -57,7 +57,7 @@ $margin = (int)Mage::getStoreConfig('mtvela/product_page/zoom_margin');
             <?php foreach ($this->getGalleryImages() as $_image): ?>
                 <li>
                     <a href="<?php echo $_image->getUrl()?>" title="<?php echo $this->htmlEscape($_image->getLabel())?>" class="cloud-zoom-gallery" rel="useZoom:'zoomID',smallImage:'<?php echo $this->helper('catalog/image')->init($this->getProduct(), 'image', $_image->getFile())->resize(352, 333)?>'">
-                        <img class="img-responsive" src="<?php echo $this->helper('catalog/image')->init($this->getProduct(), 'thumbnail', $_image->getFile())->resize(88, 83)?>" width="88" height="83" alt="<?php echo $this->htmlEscape($_image->getLabel())?>" />
+                        <img class="img-responsive" src="<?php echo $this->helper('catalog/image')->init($this->getProduct(), 'thumbnail', $_image->getFile())->resize(88, 84)?>" width="88" height="84" alt="<?php echo $this->htmlEscape($_image->getLabel())?>" />
                     </a>
                 </li>
             <?php endforeach; ?>
@@ -66,26 +66,19 @@ $margin = (int)Mage::getStoreConfig('mtvela/product_page/zoom_margin');
     <?php if(Mage::getStoreConfig('mtvela/product_page/zoom_enable')):?>
         <script type="text/javascript">
             $mt(document).ready(function(){
-                bindMoreViewsFlexSlider();
-            });
-            function bindMoreViewsFlexSlider(){
-                var count = <?php echo Mage::getStoreConfig('mtvela/product_page/zoom_count') ? (int)Mage::getStoreConfig('mtvela/product_page/zoom_count') : 1?>;
-                $mt('#moreViews').flexslider({
-                    namespace: 'more-views-',
-                    slideshow: false,
-                    animation: "slide",
-                    itemWidth: getMoreViewsItemWidth('moreViews', count, <?php echo $margin ?>),
-                    itemMargin: <?php echo $margin ?>,
-                    minItems: 1,
-                    maxItems: count,
-                    selector: ".slides > li",
-                    controlNav: false
+                $mt('#moreViews .slides').owlCarousel({
+                    items : 3,
+                    lazyLoad : true,
+                    slideSpeed : 500,
+                    pagination : false,
+                    navigation : false,
+                    itemsCustom : [[0, 3],[450, 3],[540,4],[990,4]],
+                    navigationText: [
+                        "<i class='fa fa-angle-left'></i>",
+                        "<i class='fa fa-angle-right'></i>"
+                    ]
                 });
-            }
-            function getMoreViewsItemWidth(id, column, margin){
-                var width = $mt('#'+id).width();
-                return (width/column).toFixed(2) - margin*2;
-            }
+            });
         </script>
     <?php endif; ?>
 <?php endif; ?>

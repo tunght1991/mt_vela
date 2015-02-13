@@ -58,13 +58,23 @@ MT.Widget.prototype = {
         this.container.select('.product-date').each(function(item){
             var date = item.readAttribute('data-date');
             if (date){
-                var config = {date: date};
-                Object.extend(config, this.config.countdown);
-                Object.extend(config, this.config.countdownConfig);
+                var config = {
+                    date: date,
+                    dayText: '',
+                    hourText: '',
+                    minText: '',
+                    secText: ''
+                };
+                //Object.extend(config, this.config.countdown);
+                //Object.extend(config, this.config.countdownConfig);
+                if(this.config.countdownTemplate){
+                    config.template = this.config.countdownTemplate;
+                }
                 jQuery(item).countdown(config);
             }
         }.bind(this));
     },
+
 
     initAnimation: function(){
         if (!window['jQuery']) return;
@@ -217,7 +227,7 @@ MT.Widget.prototype = {
                     onSuccess: function(transport){
                         tab_content.has_content = true;
                         tab_content.innerHTML = transport.responseText;
-
+                        $mt(".mt-tooltip").tooltip();
                         this.initCarousel(function(el){
                             this.initCarouselAnimation(el, false);
                             this.initCountdown();
@@ -362,14 +372,14 @@ MT.Widget.prototype = {
             top: new Element('div', {
                 'class': 'widget-overlay'
             }).setStyle({
-                position: 'absolute',
-                left: 0,
-                top: 0,
-                width: '100%',
-                height: '100%',
-                backgroundImage: 'url(' + this.config.parallax.overlay + ')',
-                backgroundRepeat: 'repeat'
-            })
+                    position: 'absolute',
+                    left: 0,
+                    top: 0,
+                    width: '100%',
+                    height: '100%',
+                    backgroundImage: 'url(' + this.config.parallax.overlay + ')',
+                    backgroundRepeat: 'repeat'
+                })
         });
     },
 
@@ -398,12 +408,12 @@ MT.Widget.prototype = {
         var img = new Element('img', {
             src: config.src
         }).setStyle({
-            position: 'absolute',
-            width: '100%',
-            top: 0,
-            left: 0,
-            zIndex: 0
-        });
+                position: 'absolute',
+                width: '100%',
+                top: 0,
+                left: 0,
+                zIndex: 0
+            });
 
         this.container.setStyle({
             position: 'relative',
@@ -642,11 +652,11 @@ MT.Widget.prototype = {
                 height: d.height + 'px',
                 width: '100%'
             }).setStyle({
-                position: 'absolute',
-                left: 0,
-                zIndex: 0,
-                top: 0
-            });
+                    position: 'absolute',
+                    left: 0,
+                    zIndex: 0,
+                    top: 0
+                });
 
         this.container.setStyle({
             position: 'relative',

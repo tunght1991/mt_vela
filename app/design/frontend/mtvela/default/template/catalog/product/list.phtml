@@ -63,40 +63,50 @@ if ($cfdphover != 0) {
                         class="col-lg-12 item<?php if (++$_iterator == sizeof($_productCollection)): ?> last<?php endif; ?> <?php echo $hoverClass; ?>">
                         <?php // Product Image ?>
                         <div class="row">
-                            <div class="grid12-4">
+                            <div class="grid12-6">
                                 <div class="product-hover">
                                     <a href="<?php echo $_product->getProductUrl() ?>"
                                        title="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>"
                                        class="product-image">
                                         <?php echo $this->helper('mtvela')->getLabel($_product); ?>
                                         <img
-                                            data-srcX2="<?php echo $helpImg->getImg($_product, $imgWidth * 2, $imgHeight * 2, 'small_image'); ?>"
-                                            data-src="<?php echo $helpImg->getImg($_product, $imgWidth, $imgHeight, 'small_image'); ?>"
+                                            data-src="<?php echo $helpImg->getImg($_product, 435, 412, 'small_image'); ?>"
                                             src="<?php echo $this->getSkinUrl('images/loader.gif') ?>"
                                             class="img-responsive lazy"
                                             alt="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>"/>
                                         <?php if ($theme->getCfg('category/alt_image')): ?>
-                                            <?php echo $theme->getAltImgHtml($_product, $imgWidth * 2, $imgHeight * 2); ?>
+                                            <?php echo $theme->getAltImgHtml($_product, 435, 412); ?>
                                         <?php endif; ?>
                                     </a>
 
                                 </div>
                             </div>
                             <?php // Product description ?>
-                            <div class="product-shop grid12-8">
+                            <div class="product-shop grid12-6">
                                 <div class="f-fix">
                                     <h2 class="product-name"><a href="<?php echo $_product->getProductUrl() ?>"
                                                     title="<?php echo $_productNameStripped; ?>"><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name'); ?></a>
                                     </h2>
-
+                                    <span class="category-name">
+                                    <?php
+                                    $cats = $_product->getCategoryIds();
+                                    foreach ($cats as $category_id) {
+                                        $_cat = Mage::getModel('catalog/category')->load($category_id) ;
+                                        echo $_cat->getName();
+                                        break;
+                                    }
+                                    ?>
+                                    </span>
                                     <?php if ($_product->getRatingSummary()): ?>
                                         <?php echo $this->getReviewsSummaryHtml($_product,'short') ?>
                                     <?php endif; ?>
+
+                                    <?php echo $this->getPriceHtml($_product, true) ?>
                                     <div class="desc std">
                                         <p><?php echo $_helper->productAttribute($_product, $_product->getShortDescription(), 'short_description') ?></p>
                                     </div>
 
-                                    <?php echo $this->getPriceHtml($_product, true) ?>
+
 
                                     <div class="top-actions-list">
                                         <div class="product-right pull-left">
@@ -107,7 +117,7 @@ if ($cfdphover != 0) {
                                                             class="button btn-cart mt-tooltip <?php if ($oType == true) echo 'option-file'; ?>"
                                                             onclick="setLocation('<?php echo $this->getAddToCartUrl($_product) ?>')">
                                                         <span>
-                                                            <span><i class="fa fa-shopping-cart"></i></span>
+                                                            <span><i class="fa fa-shopping-cart"></i><?php echo $this->__('Add To Cart') ?></span>
                                                         </span>
                                                     </button>
                                                 <?php } else { ?>
@@ -127,7 +137,7 @@ if ($cfdphover != 0) {
                                                         <?php } ?>
                                                             data-submit='<?php echo $this->getAddToCartUrl($_product) ?>'>
                                                         <span>
-                                                           <span><i class="fa fa-shopping-cart"></i></span>
+                                                           <span><i class="fa fa-shopping-cart"></i><?php echo $this->__('Add To Cart') ?></span>
                                                         </span>
                                                     </button>
 
@@ -195,15 +205,27 @@ if ($cfdphover != 0) {
 
                                 <div class="bottom-product">
                                     <div class="bottom-product-content">
+                                        <span class="category-name">
+                                            <?php
+                                            $cats = $_product->getCategoryIds();
+                                            foreach ($cats as $category_id) {
+                                                $_cat = Mage::getModel('catalog/category')->load($category_id) ;
+                                                echo $_cat->getName();
+                                                break;
+                                            }
+                                            ?>
+                                        </span>
                                         <h3 class="product-name">
                                             <a href="<?php echo $_product->getProductUrl() ?>"
                                                title="<?php echo $this->stripTags($_product->getName(), null, true) ?>">
                                                 <?php echo $this->escapeHtml($_product->getName()) ?>
                                             </a>
                                         </h3>
-
                                         <div class="table"><?php echo $this->getPriceHtml($_product, true) ?></div>
                                         <div class="confix-produclist-category">
+                                            <?php if ($_product->getRatingSummary()): ?>
+                                                <?php echo $this->getReviewsSummaryHtml($_product,'short') ?>
+                                            <?php endif; ?>
                                             <?php if ($_product->isSaleable()): ?>
                                                 <?php if (!($_product->getTypeInstance(true)->hasRequiredOptions($_product) || $_product->isGrouped()) || $oType == true) { ?>
                                                     <button type="button" title="<?php echo $this->__('Add To Cart') ?>"
@@ -231,7 +253,7 @@ if ($cfdphover != 0) {
                                                         <?php } ?>
                                                             data-submit='<?php echo $this->getAddToCartUrl($_product) ?>'>
                                                 <span>
-                                                   <span><?php echo $this->__("Add to cart"); ?></span>
+                                                   <span><i class="fa fa-shopping-cart"></i></span>
                                                 </span>
                                                     </button>
 

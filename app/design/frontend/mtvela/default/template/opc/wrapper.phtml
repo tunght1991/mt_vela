@@ -3,40 +3,64 @@
 $package = Mage::getDesign()->getPackageName();
 $theme = Mage::getDesign()->getTheme('frontend');
 ?>
-<div class="opc-wrapper-opc row design_package_<?php echo $package;?> design_theme_<?php echo $theme;?>">
-    <h2><?php echo $this->__('Billing Detail')?></h2>
+<div class="edit-account">
+<div class="opc-wrapper-opc design_package_<?php echo $package;?> design_theme_<?php echo $theme;?>">
+	<h2><?php echo $this->__('Checkout')?></h2>
+	<div class="opc-menu">
+
+		<?php echo $this->getChildHtml('paypal.button')?>
+
+		<?php if (!Mage::getSingleton('customer/session')->isLoggedIn()):?>
+			<?php echo $this->getChildHtml('login');?>
+		<?php endif;?>
+
+
+		<!--div class="right review-menu-block">
+    	  <a class="review-total"><?php //echo Mage::helper('opc')->getGrandTotal()?></a>
+    	  <span class="polygon"></span>
+    	  <div class="hidden" id="opc-review-block">
+		      <?php //echo $this->_getReviewHtml()?>
+		  </div>
+		</div-->
+		<div class="clear move-columns"></div>
+	</div>
+
 	<div class="clear"></div>
 
-    <div class="opc-col-full">
+	<div class="opc-col-left">
 		<form id="opc-address-form-billing" method="post">
-        	<?php echo $this->getChildHtml('billing')?>
-        </form>
-        	
-        <form id="opc-address-form-shipping" class="hidden" method="post">
-        <?php echo $this->getChildHtml('shipping')?>
-        </form>
-		
-    </div>
+			<?php echo $this->getChildHtml('billing')?>
+		</form>
 
-     <div class="opc-col-full shipping-payment">
-		 <?php if (!$this->getOnepage()->getQuote()->isVirtual()):?>
-			 <div class="shipping-block">
-				 <h3><?php echo $this->__('Shipping Details')?></h3>
-				 <div id="shipping-block-methods">
-					 <?php echo $this->getChildHtml('shipping_method');//$this->_getShippingMethodsHtml();?>
-				 </div>
-			 </div>
-		 <?php endif;?>
+		<form id="opc-address-form-shipping" class="hidden" method="post">
+			<?php echo $this->getChildHtml('shipping')?>
+		</form>
+
+	</div>
+
+	<div class="opc-col-center">
+		<?php if (!$this->getOnepage()->getQuote()->isVirtual()):?>
+			<div class="shipping-block">
+				<h3><?php echo $this->__('Shipping Method')?></h3>
+				<div id="shipping-block-methods">
+					<?php echo $this->getChildHtml('shipping_method');//$this->_getShippingMethodsHtml();?>
+				</div>
+			</div>
+		<?php endif;?>
 		<div class="payment-block <?php if ($this->getOnepage()->getQuote()->isVirtual()):?>clear-margin<?php endif;?>">
-			<h3><?php echo $this->__('Payment Details')?></h3>
+			<h3><?php echo $this->__('Payment Method')?></h3>
 			<?php echo $this->getChildHtml('payment')//$this->_getPaymentMethodsHtml();?>
 		</div>
-		 <?php if(Mage::helper('opc')->isShowComment()):?>
-			 <?php echo $this->getChildhtml('customer.comment');?>
-		 <?php endif;?>
-    </div>
+		<div class="discount-block">
+			<h3><?php echo $this->__('Discount Codes')?></h3>
+			<?php echo $this->getChildhtml('coupon');?>
+		</div>
+		<?php if(Mage::helper('opc')->isShowComment()):?>
+			<?php echo $this->getChildhtml('customer.comment');?>
+		<?php endif;?>
+	</div>
 
-	<div class="opc-col-full">
+	<div class="opc-col-right">
 		<div id="opc-review-block">
 			<?php echo $this->_getReviewHtml()?>
 		</div>
@@ -47,7 +71,7 @@ $theme = Mage::getDesign()->getTheme('frontend');
 	IWD.OPC.Checkout.config = '<?php echo $this->getJsonConfig()?>';
 	<?php if ($this->getOnepage()->getQuote()->isVirtual()):?>
 	IWD.OPC.Checkout.isVirtual = true;
-	<?php endif;?>	 
+	<?php endif;?>
 </script>
 
 <div class="opc-ajax-loader">
@@ -63,10 +87,11 @@ $theme = Mage::getDesign()->getTheme('frontend');
 	</div>
 </div>
 <div class="opc-message-wrapper design_package_<?php echo $package;?> design_theme_<?php echo $theme;?>">
-	
+
 	<div class="opc-messages">
 		<a class="close-message-wrapper"></a>
 		<div class="opc-message-container"></div>
 		<div class="opc-messages-action"><button class="button"><span><span><?php echo $this->__('Close')?></span></span></button></div>
 	</div>
+</div>
 </div>

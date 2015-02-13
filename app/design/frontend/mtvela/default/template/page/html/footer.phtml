@@ -48,18 +48,30 @@ $theme = $this->helper('mtvela');
     </div>
     <div class="footer-copyright">
         <div class="container">
-            <div class="copyright-content">
-                <address><?php echo $this->getCopyright() ?></address>
-            </div>
-            <div id="back-top" class="hidden-phone">
-                <a href="#top">
-                    <div class="sticker-wrapper">
-                        <span><?php echo $this->__('Back to Top') ?></span>
-                        <div class="sticker" title="<?php echo $this->__('Back to Top') ?>">
-                            <i class="fa fa-angle-up"></i>
-                        </div>
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                <div class="row">
+                    <div class="copyright-content">
+                        <address><?php echo $this->getCopyright() ?></address>
                     </div>
-                </a>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                <div class="row">
+                    <div id="back-top" class="hidden-phone">
+                        <a href="#top">
+                            <div class="sticker-wrapper">
+                                <span><?php echo $this->__('Back to Top') ?></span>
+                                <div class="sticker" title="<?php echo $this->__('Back to Top') ?>">
+                                    <i class="fa fa-angle-up"></i>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="store-switch-box">
+                <a href="#" class="config"><i class="fa fa-cog"></i> </a>
+                <?php echo $this->getChildHtml('store_switcher') ?>
             </div>
         </div>
     </div>

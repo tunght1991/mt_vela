@@ -26,12 +26,9 @@
 ?>
 <form id="discount-coupon-form" action="<?php echo $this->getUrl('checkout/cart/couponPost') ?>" method="post">
     <div class="discount">
-        <div class="col-lg-3">
-            <div class="row">
-            <strong><span><?php echo $this->__('Enter your code') ?></span></strong>
-            </div>
-        </div>
-        <div class="discount-form col-lg-9">
+        <h2><?php echo $this->__('Discount Codes') ?></h2>
+        <div class="discount-form">
+            <label for="coupon_code"><?php echo $this->__('Enter your coupon code if you have one.') ?></label>
             <input type="hidden" name="remove" id="remove-coupone" value="0" />
             <div class="input-box">
                 <input class="input-text" id="coupon_code" placeholder="<?php echo $this->__('Coupn code..') ?>" name="coupon_code" value="<?php echo $this->htmlEscape($this->getCouponCode()) ?>" />

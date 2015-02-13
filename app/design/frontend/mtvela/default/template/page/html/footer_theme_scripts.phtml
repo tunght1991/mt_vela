@@ -118,6 +118,29 @@ $compareHeader = $theme->getCfg('header/compare');
 
         $("#select-language").selectbox();
         $("#select-currency").selectbox();
+
+        $('[placeholder]').focus(function() {
+            var input = $(this);
+            if (input.val() == input.attr('placeholder')) {
+                input.val('');
+                input.removeClass('placeholder');
+            }
+        }).blur(function() {
+            var input = $(this);
+            if (input.val() == '' || input.val() == input.attr('placeholder')) {
+                input.addClass('placeholder');
+                input.val(input.attr('placeholder'));
+            }
+        }).blur();
+
+        $('[placeholder]').parents('form').submit(function() {
+            $mt(this).find('[placeholder]').each(function() {
+                var input = $(this);
+                if (input.val() == input.attr('placeholder')) {
+                    input.val('');
+                }
+            })
+        });
         //lazyload
         $("img.lazy").lazy({
             effect : "fadeIn",
@@ -172,9 +195,9 @@ $compareHeader = $theme->getCfg('header/compare');
             });
         });
 
-        $('.show-quickview').live('click', function(e){
+        $('.show-quickview').live('click', function(){
             if($('.btn-cart-mobile').length == 0){
-                $('[data-id=quickview-' + $(this).attr('data-id')+']').trigger('click');
+                $(this).parents('.main-quickview').find('.product-quickview').trigger('click')
             }else{
                 return window.location.href=$(this).attr('data-submit');
             }
@@ -183,15 +206,9 @@ $compareHeader = $theme->getCfg('header/compare');
 
     $mt(window).load(function(){
         <?php if ($equalHeight): ?>
+        setGridItemsEqualHeight($mt);
         <?php endif; ?>
         setGridItem($mt);
-        $mt.browserSelector();
-        if($mt("html").hasClass("chrome")) {
-            $mt.smoothScroll();
-        }
-        if($mt("html").hasClass("safari")) {
-            $mt.smoothScroll();
-        }
         var selectToggle = '<span class="fa fa-angle-down">&nbsp;</span>';
         var selectToggleRight = '<span class="fa fa-angle-right">&nbsp;</span>';
         $mt(".sbToggle").append(selectToggle);

@@ -14,8 +14,10 @@
  */
 ?>
 <!-- navigation BOF -->
-<?php 
+<?php
+$theme = $this->helper('mtvela');
 $megaeffect = Mage::getStoreConfig('mtvela/menu/effect');
+$sticky_logo = $theme->getCfg('header/sticky_logo');
 $_menu = $this->renderCategoriesMenuHtml(FALSE, FALSE, 0, 'level-top', 'sub-wrapper' );
 $routeName = Mage::app()->getRequest()->getRouteName();
 $identifier = Mage::getSingleton('cms/page')->getIdentifier(); 
@@ -37,6 +39,15 @@ $identifier = Mage::getSingleton('cms/page')->getIdentifier();
 </div>
 <?php if($_menu): ?>
 <div class="mt-navigation  hidden-xs">
+	<?php
+	$logoSrc = $this->getSkinUrl($sticky_logo);
+	$logoArc = Mage::getStoreConfig('design/header/logo_alt');
+	?>
+	<div class="logo-sticky" style="display: none;">
+		<a href="<?php echo $this->getUrl('') ?>">
+			<img class="img-sticky" src="<?php echo $logoSrc; ?>" alt="<?php echo $logoArc; ?>" />
+		</a>
+	</div>
 	<div class="mt-main-menu container">
 		<ul id="mtnav" class="megamenu">
 			<?php if(Mage::getStoreConfig('mtvela/menu/home')){?>

@@ -2,113 +2,76 @@
 <li><a href="{{store direct_url="about-magento-demo-store"}}">About Us</a></li>
 <li><a href="{{store direct_url="customer-service"}}">Customer Service</a></li>
 <li class="last privacy"><a href="{{store direct_url="privacy-policy-cookie-restriction-mode"}}">Privacy Policy</a></li>
-</ul>]]></content><is_active>1</is_active><stores><item>0</item></stores></cms_block><cms_block><title>Cookie restriction notice</title><identifier>cookie_restriction_notice_block</identifier><content><![CDATA[<p>This website requires cookies to provide all of its features. For more information on what data is contained in the cookies, please see our <a href="{{store direct_url="privacy-policy-cookie-restriction-mode"}}">Privacy Policy page</a>. To accept cookies from this site, please click the Allow button below.</p>]]></content><is_active>1</is_active><stores><item>0</item></stores></cms_block><cms_block><title>homepage-block-right-1</title><identifier>homepage-block-right-1</identifier><content><![CDATA[<div class="block-right">
-<div class="title-block">
-<h2 class="heading permanent">BRACELETS</h2>
-<p class="permanent tp-splitted">Aqua&rsquo;s bracelets</p>
-</div>
-<div class="content-block">
-<div class="permanent tp-description">
-<p>Flaunt your excellent taste</p>
-<p>with a classic bracelet to wear to the</p>
-<p>finest of occasions.</p>
-</div>
-<span><a class="btn permanent view-all" href="{{store url="product/bracelets.html"}}">view all</a></div></span>
-</div>]]></content><is_active>1</is_active><stores><item>0</item></stores></cms_block><cms_block><title>homepage-block-left-1</title><identifier>homepage-block-left-1</identifier><content><![CDATA[<div class="static-left-1"><img class="img-responsive" src="{{media url="wysiwyg/magenthemes/static/bejewelry_home.jpg"}}" alt="" /></div>]]></content><is_active>1</is_active><stores><item>0</item></stores></cms_block><cms_block><title>home_slider_2</title><identifier>home_slider_2</identifier><content><![CDATA[<div class="item widget-slide"><a class="fade-on-slideshow-hover" title="" href="#"><img class="img-responsive" src="{{media url="wysiwyg/magenthemes/mtvela/slider/homepage_slider.jpg"}}" alt="" /></a></div>
-]]></content><is_active>1</is_active><stores><item>0</item></stores></cms_block><cms_block><title>home_slider_1</title><identifier>home_slider_1</identifier><content><![CDATA[<div class="item widget-slide"><a class="fade-on-slideshow-hover" title="" href="#"><img class="img-responsive" src="{{media url="wysiwyg/magenthemes/mtvela/slider/homepage_slider.jpg"}}" alt="" /></a>
-<div class="caption top-left light1"><a class="link-to-product" href="{{store url="product.phtml"}}">PURCHASE NOW</a></div>
-</div>]]></content><is_active>1</is_active><stores><item>0</item></stores></cms_block><cms_block><title>homepage-block-right-2</title><identifier>homepage-block-right-2</identifier><content><![CDATA[<div class="static-right-2"><img class="img-responsive"  src="{{media url="wysiwyg/magenthemes/static/bejewelry_home_01.jpg"}}" alt="" /></div>]]></content><is_active>1</is_active><stores><item>0</item></stores></cms_block><cms_block><title>homepage-block-left-2</title><identifier>homepage-block-left-2</identifier><content><![CDATA[<div class="block-left">
-<div class="title-block">
-<h2 class="heading permanent">RINGS</h2>
-<p class="permanent tp-splitted">Diamond ring for wedding</p>
-</div>
-<div class="content-block">
-<div class="permanent tp-description">
-<p>It combines perfectly with matching<p/><p>Tyra jewelry pieces and is ideal for<p/><p>everyday wear.</p>
-</div>
-<span><a class="btn permanent view-all" href="{{store url="product/rings"}}">view all</a></div></span>
-</div>]]></content><is_active>1</is_active><stores><item>0</item></stores></cms_block><cms_block><title>homepage-block-left-3</title><identifier>homepage-block-left-3</identifier><content><![CDATA[<div class="static-left-3"><img class="img-responsive" src="{{media url="wysiwyg/magenthemes/static/bejewelry_home_02.png"}}" alt="" /></div>]]></content><is_active>1</is_active><stores><item>0</item></stores></cms_block><cms_block><title>homepage-block-right-3</title><identifier>homepage-block-right-3</identifier><content><![CDATA[<div class="block-right">
-<div class="title-block">
-<h2 class="heading permanent">NECKLACES</h2>
-<p class="permanent tp-splitted">Gold medium amethyst DTL necklaces</p>
-</div>
-<div class="content-block">
-<div class="permanent tp-description">
-<p>Inspired by water droplets, this refined pendant has a subtle <p /> <p>aura of royalty. It features two drop-shaped crystals in <p/> <p>Provence Lavender and clear crystal.</p>
-</div>
-<span><a class="btn permanent view-all" href="{{store url="product/necklaces.html"}}">view all</a></span></div>
-</div>]]></content><is_active>1</is_active><stores><item>0</item></stores></cms_block><cms_block><title>homepage-block-4</title><identifier>homepage-block-4</identifier><content><![CDATA[<div class="static-4"><img class="img-responsive" src="{{media url="wysiwyg/magenthemes/static/bejewelry_home_02.jpg"}}" alt="" />
-<div class="static-footer">
-<div class="title-block">
-<h2 class="heading permanent">NECKLACES</h2>
-<p class="permanent tp-splitted">Perfect together with dinamond</p>
-</div>
-<div class="content-block">
-<a class="btn permanent view-all">view all</a></div>
-</div>
-</div>]]></content><is_active>1</is_active><stores><item>0</item></stores></cms_block><cms_block><title>homepage-block-5</title><identifier>homepage-block-5</identifier><content><![CDATA[<div class="static-4"><img class="img-responsive" src="{{media url="wysiwyg/magenthemes/static/bejewelry_home_03.jpg"}}" alt="" />
-<div class="static-footer">
-<div class="title-block">
-<h2 class="heading permanent">PENDANTS</h2>
-<p class="permanent tp-splitted">Enternally Brilliant</p>
-</div>
-<div class="content-block"><a class="btn permanent view-all" href="{{store url='product/pendants.html'}}">view all</a></div>
-</div>
-</div>]]></content><is_active>1</is_active><stores><item>0</item></stores></cms_block><cms_block><title>homepage-block-newsletter</title><identifier>homepage-block-newsletter</identifier><content><![CDATA[<div class="static-newsletter">{{block type="newsletter/subscribe" name="right.newsletter" template="newsletter/subscribe.phtml" }}</div>]]></content><is_active>1</is_active><stores><item>0</item></stores></cms_block><cms_block><title>block_footer_top_1</title><identifier>block_footer_top_1</identifier><content><![CDATA[<div class="information collapsible mobile-collapsible">
-<div class="footer-static main-heading">
-<h3><span class="com">Customer Service</span> <span class="accordion-footer visible-xs">accordion footer</span></h3>
-<ul class="clearfix block-content-statick acc">
-<li class="item first"><a title="" href="#">Oder Status</a></li>
-<li class="item"><a title="" href="#">Payment &amp; Pricinh</a></li>
-<li class="item"><a title="" href="#">Return &amp; Refund</a></li>
-<li class="item"><a title="" href="#">Gift Voucher</a></li>
-<li class="item"><a title="" href="#">Contact us</a></li>
-<li class="item last"><a title="" href="#">Help</a></li>
+</ul>]]></content><is_active>1</is_active><stores><item>0</item></stores></cms_block><cms_block><title>Cookie restriction notice</title><identifier>cookie_restriction_notice_block</identifier><content><![CDATA[<p>This website requires cookies to provide all of its features. For more information on what data is contained in the cookies, please see our <a href="{{store direct_url="privacy-policy-cookie-restriction-mode"}}">Privacy Policy page</a>. To accept cookies from this site, please click the Allow button below.</p>]]></content><is_active>1</is_active><stores><item>0</item></stores></cms_block><cms_block><title>social</title><identifier>social</identifier><content><![CDATA[<ul class="social-icons small light">
+<li class="facebook"><a href="http://www.facebook.com/" target="_blank"><i class="fa fa-facebook-square">&nbsp;</i><i class="fa fa-facebook-square">&nbsp;</i></a></li>
+<li class="twitter"><a href="http://www.twitter.com/" target="_blank"><i class="fa fa-twitter">&nbsp;</i><i class="fa fa-twitter">&nbsp;</i></a></li>
+<li class="google"><a href="http://www.plus.google.com/" target="_blank"><i class="fa fa-google-plus">&nbsp;</i><i class="fa fa-google-plus">&nbsp;</i></a></li>
+<li class="instagram"><a href="http://www.instagram.com/" target="_blank"><i class="fa fa-instagram">&nbsp;</i><i class="fa fa-instagram">&nbsp;</i></a></li>
+<li class="linkin"><a href="#" target="_blank"><i class="fa fa-linkedin">&nbsp;</i><i class="fa fa-linkedin">&nbsp;</i></a></li>
+</ul>]]></content><is_active>1</is_active><stores><item>0</item></stores></cms_block><cms_block><title>top-contact</title><identifier>top-contact</identifier><content><![CDATA[<ul>
+<li><span class="fa fa-envelope">&nbsp;</span>&nbsp;&nbsp;&nbsp;hello@cleversoft.co</li>
+<li class="phone-num"><span class="fa fa-phone">&nbsp;</span>&nbsp;&nbsp;&nbsp;+84 938.123468</li>
+</ul>]]></content><is_active>1</is_active><stores><item>0</item></stores></cms_block><cms_block><title>homepage-silde-1</title><identifier>homepage-silde-1</identifier><content><![CDATA[<div class="item widget-slide"><a class="fade-on-slideshow-hover" title="" href="#"><img class="img-responsive" src="{{media url="wysiwyg/magenthemes/slider/slider-2.jpg"}}" alt="" /></a></div>]]></content><is_active>1</is_active><stores><item>0</item></stores></cms_block><cms_block><title>homepage-silde-2</title><identifier>homepage-silde-2</identifier><content><![CDATA[<div class="item widget-slide"><a class="fade-on-slideshow-hover" title="" href="#"><img class="img-responsive" src="{{media url="wysiwyg/magenthemes/slider/slider-1.jpg"}}" alt="" /></a></div>]]></content><is_active>1</is_active><stores><item>0</item></stores></cms_block><cms_block><title>homepage-silde-left</title><identifier>homepage-silde-left</identifier><content><![CDATA[<p>{{block type="mtfour/mainmenu_menu" name="magenthemes.catnav" template="magenthemes/mainmenu/categories.phtml"}}</p>]]></content><is_active>1</is_active><stores><item>0</item></stores></cms_block><cms_block><title>homepage-static-1</title><identifier>homepage-static-1</identifier><content><![CDATA[<div class="banner-1"><img class="img-responsive" src="{{media url="wysiwyg/magenthemes/static/Untitled-1.jpg"}}" alt="" /></div>]]></content><is_active>1</is_active><stores><item>0</item></stores></cms_block><cms_block><title>Footer Top</title><identifier>footer-top-01</identifier><content><![CDATA[<div class="information-logo collapsible mobile-collapsible">
+<div class="footer-static main-heading"><img src="{{media url="wysiwyg/magenthemes/mtvela/logo/logo-white.png"}}" alt="" />
+<p>Vivamus velit nisi, laoreet eget eros vel, viverra malesuada ante.</p>
+<a class="read-more" href="#">Read more</a>
+<ul class="footer-social">
+<li class="facebook"><a title="Facebook" href="#" target="_blank"><i class="fa fa-facebook-square">&nbsp;</i><i class="fa fa-facebook-square">&nbsp;</i></a></li>
+<li class="twitter"><a title="Twitter" href="#" target="_blank"><i class="fa fa-twitter">&nbsp;</i><i class="fa fa-twitter">&nbsp;</i></a></li>
+<li class="google"><a title="Google Plus" href="#" target="_blank"><i class="fa fa-google-plus">&nbsp;</i><i class="fa fa-google-plus">&nbsp;</i></a></li>
+<li class="instagram"><a title="Instagram" href="#" target="_blank"><i class="fa fa-instagram">&nbsp;</i><i class="fa fa-instagram">&nbsp;</i></a></li>
+<li class="linkin"><a title="Link In" href="#" target="_blank"><i class="fa fa-linkedin">&nbsp;</i><i class="fa fa-linkedin">&nbsp;</i></a></li>
 </ul>
 </div>
-</div>]]></content><is_active>1</is_active><stores><item>0</item></stores></cms_block><cms_block><title>block_footer_top_2</title><identifier>block_footer_top_2</identifier><content><![CDATA[<div class="information collapsible mobile-collapsible">
+</div>]]></content><is_active>1</is_active><stores><item>0</item></stores></cms_block><cms_block><title>Footer Top</title><identifier>footer-top-02</identifier><content><![CDATA[<div class="about customer-services collapsible mobile-collapsible">
 <div class="footer-static main-heading">
-<h3><span class="com">My Account</span> <span class="accordion-footer visible-xs">accordion footer</span></h3>
+<h3><span class="com">Customer Services</span> <span class="accordion-footer visible-xs accordion-show">accordion footer</span></h3>
+<ul class="clearfix block-content-statick acc">
+<li class="item first"><a title="" href="#">Oder Status</a></li>
+<li class="item"><a title="" href="#">Return &amp; Refund</a></li>
+<li class="item"><a title="" href="#">Gift Voucher</a></li>
+<li class="item"><a title="" href="#">Contact Us</a></li>
+<li class="item"><a title="" href="#">Help</a></li>
+<li class="item"><a title="" href="#">Special</a></li>
+<li class="item last"><a title="" href="#">Term &amp; Condtions</a></li>
+</ul>
+</div>
+</div>]]></content><is_active>1</is_active><stores><item>0</item></stores></cms_block><cms_block><title>Footer Top</title><identifier>footer-top-03</identifier><content><![CDATA[<div class="about my-account collapsible mobile-collapsible">
+<div class="footer-static main-heading">
+<h3><span class="com">My Account</span> <span class="accordion-footer visible-xs accordion-show">accordion footer</span></h3>
 <ul class="clearfix block-content-statick acc">
 <li class="item first"><a title="" href="#">My Account</a></li>
 <li class="item"><a title="" href="#">Wishlist</a></li>
-<li class="item"><a title="" href="#">Specials</a></li>
-<li class="item"><a title="" href="#">Order History</a></li>
+<li class="item"><a title="" href="#">Checkout</a></li>
+<li class="item"><a title="" href="#">Our History</a></li>
+<li class="item"><a title="" href="#">Shopping Cart</a></li>
+<li class="item last"><a title="" href="#">Newsletter</a></li>
 </ul>
 </div>
-</div>]]></content><is_active>1</is_active><stores><item>0</item></stores></cms_block><cms_block><title>block_footer_top_3</title><identifier>block_footer_top_3</identifier><content><![CDATA[<div class="information collapsible mobile-collapsible">
+</div>]]></content><is_active>1</is_active><stores><item>0</item></stores></cms_block><cms_block><title>Footer Top</title><identifier>footer-top-04</identifier><content><![CDATA[<div class="information-company collapsible mobile-collapsible">
 <div class="footer-static main-heading">
-<h3><span class="com">Follow us on</span> <span class="accordion-footer visible-xs">accordion footer</span></h3>
+<h3><span class="com">Company</span> <span class="accordion-footer visible-xs accordion-show">accordion footer</span></h3>
 <ul class="clearfix block-content-statick acc">
-<li class="item first"><a title="" href="#">Twitter</a></li>
-<li class="item"><a title="" href="#">Facebook</a></li>
-<li class="item"><a title="" href="#">Google Plus</a></li>
-<li class="item last"><a title="" href="#">Youtube</a></li>
+<li class="item first"><span class="fa fa-map-marker"></span><a title="" href="#">169 Nguyen Ngoc Vu Str., Cau Giay, Hanoi, Vietnam.</a></li>
+<li class="item"><span class="fa fa-phone"></span><a title="" href="#">+84 938 123468</a></li>
+<li class="item"><span class="fa fa-envelope-o"></span><a title="" href="#">hello@cleversoft.co</a></li>
+<li class="item last"><span class="fa fa-globe"></span><a title="" href="#">www.zooextension.com</a></li>
 </ul>
+<div class="payment-method  block-content-statick"><a href="#"><span class="fa fa-cc-visa"></span></a> <a href="#"><span class="fa fa-cc-mastercard"></span></a> <a href="#"><span class="fa fa-cc-paypal"></span></a> <a href="#"><span class="fa fa-cc-stripe"></span></a><a href="#"><span class="fa fa-cc"></span></a></div>
 </div>
-</div>]]></content><is_active>1</is_active><stores><item>0</item></stores></cms_block><cms_block><title>block_footer_top_4</title><identifier>block_footer_top_4</identifier><content><![CDATA[<div class="contact-info collapsible mobile-collapsible">
-<div class="footer-static main-heading">
-<h3><span class="com">Contact Us</span> <span class="accordion-footer visible-xs">accordion footer</span></h3>
-<ul class="clearfix block-content-statick acc">
-<li class="item first"><span class="icon-basic icon-basic-geolocalize-01">&nbsp;</span><a title="" href="#">169 Nguyen Ngoc Vu Str, Cau Giay, Hanoi</a></li>
-<li class="item"><span class="fa fa-envelope-o">&nbsp;</span><a title="" href="#">hello@cleversoft.co</a></li>
-<li class="item"><span class="fa fa-mobile">&nbsp;</span><a title="" href="#">+84 938 123468</a></li>
-</ul>
-<div class="payment-method  block-content-statick"><a href="#"><span class="fa fa-cc-visa">&nbsp;</span></a> <a href="#"><span class="fa fa-cc-mastercard">&nbsp;</span></a> <a href="#"><span class="fa fa-cc-paypal">&nbsp;</span></a> <a href="#"><span class="fa fa-cc-stripe">&nbsp;</span></a></div>
+</div>]]></content><is_active>1</is_active><stores><item>0</item></stores></cms_block><cms_block><title>homepage-static-2</title><identifier>homepage-static-2</identifier><content><![CDATA[<div class="homepage-static-2"><img class="img-responsive" src="{{media url="wysiwyg/magenthemes/static/Untitled-2.jpg"}}" alt="" /></div>]]></content><is_active>1</is_active><stores><item>0</item></stores></cms_block><cms_block><title>homepage-maintop-col-1</title><identifier>homepage-maintop-col-1</identifier><content><![CDATA[<div class="static-main first">
+<div class="colleft-static"><em class="fa fa-check-square-o">&nbsp;</em></div>
+<div class="colright-static"><span class="heading-static">Commitment</span>
+<p class="content-static">100% Commitment genuine sales</p>
 </div>
-</div>]]></content><is_active>1</is_active><stores><item>0</item></stores></cms_block><cms_block><title>homapge-block-message</title><identifier>homapge-block-message</identifier><content><![CDATA[<div class="messagebejewelry">
-<div class="banner-content">
-<h2>The best way to buy gifts from your Rings or Bracelets</h2>
-<p>The Be Jewelry app makes it easy to shop, compare, and read reviews. You can even check out with Be Pay.</p>
-<a class="btn btn-dark btn-lg" href="#">DOWNLOAD NOW</a></div>
-</div>]]></content><is_active>1</is_active><stores><item>0</item></stores></cms_block><cms_block><title>block_product_tab1</title><identifier>block_product_tab1</identifier><content><![CDATA[<div class="col-lg-6">{{block type="catalog/product_view_description" name="left.description" template="catalog/product/view/description.phtml" }}</div>]]></content><is_active>1</is_active><stores><item>0</item></stores></cms_block><cms_block><title>block_product_tab2</title><identifier>block_product_tab2</identifier><content><![CDATA[{{block type="review/product_view_list" name="right.reviewform" template="review/product/view/list.phtml" }}]]></content><is_active>1</is_active><stores><item>0</item></stores></cms_block><cms_block><title>create_account_block_left</title><identifier>create_account_block_left</identifier><content><![CDATA[<div class="row">
-<div class="block-create-left">
-<div class="title-block">
-<h2>Create an Be ID.</h2>
+</div>]]></content><is_active>1</is_active><stores><item>0</item></stores></cms_block><cms_block><title>homepage-maintop-col-2</title><identifier>homepage-maintop-col-2</identifier><content><![CDATA[<div class="static-main">
+<div class="colleft-static"><em class="fa fa-money">&nbsp;</em></div>
+<div class="colright-static"><span class="heading-static">Money Back</span>
+<p class="content-static">Refund 100% if your stock have a problems</p>
 </div>
-<div class="content-block">An Be ID is your user name for everything you do with Be: Shop the Be Jewelry Store, enable iBe on all your devices, buy from the Be Online Store, make a reservation at an Be Retail Store, access the Be Support website, and more.</div>
+</div>]]></content><is_active>1</is_active><stores><item>0</item></stores></cms_block><cms_block><title>homepage-maintop-col-3</title><identifier>homepage-maintop-col-3</identifier><content><![CDATA[<div class="static-main">
+<div class="colleft-static"><i class="fa fa-truck">&nbsp;</i></div>
+<div class="colright-static"><span class="heading-static">Free shipping</span>
+<p class="content-static">Free shipping on eveything.</p>
 </div>
-</div>]]></content><is_active>1</is_active><stores><item>0</item></stores></cms_block><cms_block><title>block_detail_social_share</title><identifier>block_detail_social_share</identifier><content><![CDATA[<div class="free-shipping">FREE SHIPPING</div>
-<div class="social-link"><span class="text-share">Share with:</span>
-<div class="share-links"><a href="#"><span class="fa fa-facebook-square">&nbsp;</span></a> <a href="#"><span class="fa fa-twitter-square">&nbsp;</span></a> <a href="#"><span class="fa fa-google-plus-square">&nbsp;</span></a> <a href="#"><span class="fa fa-youtube-square">&nbsp;</span></a></div>
-</div>]]></content><is_active>1</is_active><stores><item>0</item></stores></cms_block></blocks></root>
+</div>]]></content><is_active>1</is_active><stores><item>0</item></stores></cms_block><cms_block><title>homepage-maintop-col-4</title><identifier>homepage-maintop-col-4</identifier><content><![CDATA[<div class="main-col4">{{block type="newsletter/subscribe" name="right.newsletter" template="newsletter/subscribe.phtml" }}<div>]]></content><is_active>1</is_active><stores><item>0</item></stores></cms_block><cms_block><title>Homepage Bottom banner</title><identifier>homepage-bottom-banner</identifier><content><![CDATA[<div class="bottom-banner"><a href="#"><img class="img-responsive" src="{{media url="wysiwyg/magenthemes/static/bottom_banner.jpg"}}" alt="" /></a></div>]]></content><is_active>1</is_active><stores><item>0</item></stores></cms_block></blocks></root>

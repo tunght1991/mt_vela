@@ -26,7 +26,19 @@ $t                  = microtime();
         animation: <?php echo $this->getConfig('animation') ?>,
         parallax: <?php echo $this->getConfig('parallax') ?>,
         carousel: <?php echo $this->getConfig('carousel') ?>,
-        carouselConfig: null,
+        carouselConfig:  {itemsCustom: [
+            [0,1],
+            [320,1],
+            [360,1],
+            [480,2],
+            [640,2],
+            [768,2],
+            [800,2],
+            [980,2],
+            [1024,3],
+            [1280,3]
+        ]
+        },
         countdown: <?php echo $this->getConfig('countdown') ?>,
         countdownConfig: null,
         countdownTemplate: '<div class="day"><span class="no">%d</span><span class="text">days</span></div><div class="hours"><span class="no">%h</span><span class="text">hours</span></div><div class="min"><span class="no">%i</span><span class="text">min</span></div><div class="second"><span class="no">%s</span><span class="text">secs</span></div>',
